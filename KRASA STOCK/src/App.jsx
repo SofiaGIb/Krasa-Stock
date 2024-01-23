@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import NavBar from "./routes/components/NavBar";
 import Logueo from "./routes/components/Logueo";
 import Categoria2 from "./routes/components/Categoria2";
