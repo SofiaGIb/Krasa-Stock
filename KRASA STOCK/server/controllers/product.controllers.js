@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-const createProduct = async (name, details, amount) => {
+export const createProduct = async (name, details, amount) => {
   const newProduct = await prisma.product.create({
     data: {
       name,
@@ -12,8 +12,9 @@ const createProduct = async (name, details, amount) => {
   return newProduct;
 };
 
-const allProduct = async () => {
+export const allProduct = async () => {
   const products = await prisma.product.findMany();
+  console.log("probando");
   return products;
 };
 module.exports = {

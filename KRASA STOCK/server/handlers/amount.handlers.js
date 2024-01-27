@@ -2,9 +2,9 @@ import {allProduct,createProduct} from "../controllers/product.controllers"
 
  const getProduct = async (req,res) => {
     try {
-        res.status(200).json(await allProduct())
-    } catch (error) { res.status(500).json(error)
-        
+        res.status(200).json(await allProduct(),console.log("hola"))
+    } catch (error) { res.status(500).json(error,console.log("hola"))
+        console.log("hola")
     }
  
  }
