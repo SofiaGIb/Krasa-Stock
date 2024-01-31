@@ -1,5 +1,7 @@
-const {allProduct,createProduct} = require ('../controllers/product.controllers')
- export const getProduct = async (req,res) => {
+const {createProduct,allProduct} = import ("../controllers/product.controllers.js")
+
+
+const getProduct = async (req,res) => {
     try {
         res.status(200).json(await allProduct(),console.log("hola"))
     } catch (error) { res.status(500).json(error,console.log("hola"))
