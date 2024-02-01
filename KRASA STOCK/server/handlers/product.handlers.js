@@ -1,34 +1,43 @@
-const { createProduct, allProduct,deleteProduct } = import("../controllers/product.controllers.js");
+const {createProduct} = require ('../controllers/product.controllers.js')
+const {  allProduct, deleteProduct ,buscador} = require(
+  "../controllers/product.controllers.js"
+);
 
 const getProduct = async (req, res) => {
   try {
-      res.status(200).json(await allProduct(), );
-} catch (error) {
-    res.status(500).json(error,         );
-    ;
-  }
-};
-const newProduct = async (req, res) => {
-  try {
-    const { name, description, amount } = req.body;
- res.status(200).json(await createProduct(name,description,amount))
-} catch (error) {
-      res.status(500).json({ error: error.message });
-      console.log(error);
-  }
-};
-
-const deleteProducto = async (req,res)=>{
-  try {
-    const {name} = req.body;
-res.status(200).json(await deleteProduct(name))
+    res.status(200).json(await allProduct());
   } catch (error) {
-    console.log(error)
-    res.status(500).json(error)
-
+    res.status(500).json(error);
   }
-}
+};
 
- module.exports ={
-    getProduct, newProduct,deleteProducto
- }
+const encontrado = async (req, res) => {
+  try {
+    res.status(200).json(productoEncontrado);
+  } catch (error) {
+    res.status(500).json({ error: "Error buscando el producto" });
+  }
+};
+const newProduct = async (req,res) => {
+  try {
+    await createProduct(req,res );
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const deleteProducto = async (req, res) => {
+  try {
+    const { name } = req.body;
+    res.status(200).json(await deleteProduct(name));
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+module.exports = {
+  newProduct,
+  getProduct,
+  deleteProducto,
+  encontrado,
+};
