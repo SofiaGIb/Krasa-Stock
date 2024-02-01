@@ -5,15 +5,15 @@ const createProduct = async (name, description, amount) => {
   try {
     const Product = await prisma.product.create({
       data: {
-        name: name,
-        description: description,
-        amount:amount,
+        name,
+        description,
+        amount
       },
     });
     return Product;
   } catch (error) {
-    error;
     console.log(error);
+    throw error;
   }
 };
 
@@ -25,7 +25,17 @@ const allProduct = async (req, res) => {
     res.status(500).json({ error: "Error fetching products" });
   }
 };
+const deletProduct = async (name)=>{
+  
+  
+ return  await prisma.product.delete({
+    where:{  name}
+  })
+}
+
+
 module.exports = {
   allProduct,
   createProduct,
+  deletProduct
 };
