@@ -1,24 +1,23 @@
-const  {PrismaClient} = require("@prisma/client")
+const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-const createProduct = async (name, details, amount) => {
+const createProduct = async (name, description, amount) => {
   try {
-    
-    
-    const newProduct = await prisma.product.create   ({
+    const Product = await prisma.product.create({
       data: {
-        name,
-        details,
-        amount,
+        name: name,
+        description: description,
+        amount:amount,
       },
     });
-    return newProduct;  
-  } catch (error ) {
-    res.status(500).json({ error: "Error fetching products" })
-}
+    return Product;
+  } catch (error) {
+    error;
+    console.log(error);
+  }
 };
 
-const allProduct = async (req,res) => {
+const allProduct = async (req, res) => {
   try {
     const products = await prisma.product.findMany();
     res.json(products);
