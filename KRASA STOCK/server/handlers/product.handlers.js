@@ -1,19 +1,21 @@
 const {createProduct} = require ('../controllers/product.controllers.js')
-const {  allProduct, deleteProduct ,buscador} = require(
+const {  productAll, deletProduct ,found} = require(
   "../controllers/product.controllers.js"
 );
 
-const getProduct = async (req, res) => {
+const allProduct = async (req, res) => {
   try {
-    res.status(200).json(await allProduct());
+    res.status(200).json(await productAll());
   } catch (error) {
     res.status(500).json(error);
   }
 };
 
-const encontrado = async (req, res) => {
+const productFound = async (req, res) => {
   try {
-    res.status(200).json(productoEncontrado);
+
+    const productoEncontrados  = req.body
+    res.status(200).json(productoEncontrados );
   } catch (error) {
     res.status(500).json({ error: "Error buscando el producto" });
   }
@@ -26,10 +28,10 @@ const newProduct = async (req,res) => {
   }
 };
 
-const deleteProducto = async (req, res) => {
+const productoDelete = async (req, res) => {
   try {
     const { name } = req.body;
-    res.status(200).json(await deleteProduct(name));
+    res.status(200).json(await deletProduct(name));
   } catch (error) {
     res.status(500).json(error);
   }
@@ -37,7 +39,7 @@ const deleteProducto = async (req, res) => {
 
 module.exports = {
   newProduct,
-  getProduct,
-  deleteProducto,
-  encontrado,
+  allProduct,
+  productoDelete,
+  productFound
 };
