@@ -5,9 +5,10 @@ const {  productAll, deletProduct ,found} = require(
 
 const allProduct = async (req, res) => {
   try {
-    res.status(200).json(await productAll());
+    const products = await productAll(req, res);
+    res.status(200).json(products);
   } catch (error) {
-    res.status(500).json(error);
+   res.status(500).json({ error: 'Error handling product search' });
   }
 };
 
