@@ -1,18 +1,18 @@
+require ('dotenv').config();
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 
-const routes = require ("./routes/index.js")
 const server = express();
 
 server.name = 'API';
 
+const routes = require ("./routes/index.js")
 server.use(bodyParser.urlencoded({ extended: true }));
-server.use(bodyParser.json());
+server.use(express.json())
 server.use(cookieParser());
 server.use(morgan('dev'));
-
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
