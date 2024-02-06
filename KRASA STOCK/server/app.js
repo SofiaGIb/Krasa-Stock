@@ -3,12 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const router = require ("./routes/index.js")
 
 const server = express();
 
 server.name = 'API';
+server.use(express.urlencoded({ extended: true }));
+server.use(express.json())
+server.use(bodyParser.urlencoded({ extended: true }));
 
-const routes = require ("./routes/index.js")
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.json())
 server.use(cookieParser());
@@ -22,7 +25,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(routes);
+server.use( "/", router);
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars

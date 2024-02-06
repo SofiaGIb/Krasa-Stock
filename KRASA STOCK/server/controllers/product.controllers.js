@@ -37,31 +37,44 @@ const createProduct = async (name,description,amount) => {
       data: {
         name: name,
         description: description,
-        amount: amount,
+        amount: parseInt(amount),
       },
     });
-    res.status(201).json(newProduct); // Devuelve el nuevo producto creado
   } catch (error) {
     console.log({ error });
-    res.status(500).json({ error: "Error creando el producto" });
   }
 };
 
 //!-----------------------------------------------------------------------------------------------------
 
 const deletProduct = async (name) => {
-  console.log(name,name);
   try {
     const product =  await prisma.product.delete({
       where : {name : name}
     })
-    console.log(product);
     return product;
   } catch (error) {
 console.log(error);  }
 };
 
+//!-----------------------------------------------------------------------------------------------------
+const updateAmount = async(name,sale) =>{
+try {
+  const update = await prisma.product.update({
+    where:{
+      name :name
+    },
+    data:{
+      amount : venta
+    },
+  });
+  return update;
+} catch (error) {
+  console.log(error);
+}
+}
 module.exports = {
+  updateAmount,
   createProduct,
   productAll,
   deletProduct,
