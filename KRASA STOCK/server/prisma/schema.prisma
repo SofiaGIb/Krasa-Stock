@@ -15,4 +15,14 @@ model Product {
   name        String  @unique
   description String?
   amount      Int
+sales Sale[]
+}
+
+model Sale {
+id Int @id @default(autoincrement())
+total Int 
+product Product @relation(fields:[productId],references:[id])
+productId Int
+
+
 }

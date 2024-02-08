@@ -58,14 +58,14 @@ console.log(error);  }
 };
 
 //!-----------------------------------------------------------------------------------------------------
-const updateAmount = async(name,sale) =>{
+const updateAmount = async(name,total) =>{
 try {
   const update = await prisma.product.update({
     where:{
       name :name
     },
     data:{
-      amount : venta
+      amount : total
     },
   });
   return update;
