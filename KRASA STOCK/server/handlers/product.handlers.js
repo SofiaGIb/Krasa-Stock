@@ -1,4 +1,4 @@
-const { createProduct, updateAmount } = require("../controllers/product.controllers.js");
+const { createProduct } = require("../controllers/product.controllers.js");
 const { productAll, deletProduct, found } = require("../controllers/product.controllers.js");
 
 const allProduct = async (req, res) => {
@@ -47,20 +47,9 @@ const productoDelete = async (req, res) => {
 };
 //!-----------------------------------------------------------------------------------------------------
 
-const amountUpdate = async (req,res)=>{
-  try {
-    const {name,total} = req.body;
-    res.status(200).json(await updateAmount(name,total));
-  } catch (error) {
-    
-    console.log(error);
-    res.status(500).json(error)
 
-  }
-}
 
 module.exports = {
-  amountUpdate,
   newProduct,
   allProduct,
   productoDelete,

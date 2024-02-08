@@ -3,7 +3,12 @@ const prisma = new PrismaClient();
 
 const productAll = async (req, res) => {
   try {
-    const products = await prisma.product.findMany();
+    const products = await prisma.product.findMany({
+      orderBy:{
+        amount:"asc",
+
+      },}
+    );
     res.status(200).json(products);
   } catch (error) {
     console.log({ error });
@@ -58,23 +63,8 @@ console.log(error);  }
 };
 
 //!-----------------------------------------------------------------------------------------------------
-const updateAmount = async(name,total) =>{
-try {
-  const update = await prisma.product.update({
-    where:{
-      name :name
-    },
-    data:{
-      amount : total
-    },
-  });
-  return update;
-} catch (error) {
-  console.log(error);
-}
-}
+
 module.exports = {
-  updateAmount,
   createProduct,
   productAll,
   deletProduct,
