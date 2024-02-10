@@ -1,16 +1,31 @@
 import React, { useState } from "react";
+import {useSelector,useDispatch} from "react-redux";
+import { useEffect } from "react";
+import { allProduct } from "../../Redux/actions/actionsFunction/actions";
 
-function Product() {
+export const Product = () =>{
+
+
+const dispatch = useDispatch();
+const products = useSelector((state)=>state.allProducts);
+
+console.log(products);
+
+useEffect(()=>{
+  dispatch(allProduct());
+},[dispatch]);
+
+
+
+
   <h1>lista de productos</h1>;
-  let productList = [{ name: name, details: details, amount: amount }];
-  const [list, setList] = useState(productList);
   return (
     <div>
       <h2>LISTADO DE PRODUCTOS</h2>
 
       <ol>
-        {list.map((item) => (
-          <item key={item.name} name={item.name} details={item.details} amount={item.amount}></item>
+        {products.map((product) => (
+          <product key={product.id} name={product.name} details={product.details} amount={product.amount}></product>
         ))}
       </ol>
     </div>

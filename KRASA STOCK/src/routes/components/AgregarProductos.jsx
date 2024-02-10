@@ -1,9 +1,7 @@
 import React, { useState} from "react";
 import {useSelector,useDispatch} from "react-redux";
-import { ADD_PRODUCT } from "../../Redux/actions/action-types/action-types";
-import addProduct from "../../Redux/actions/actionsFunction/actionAddProduct";
-
-export const AddProduct = () => {
+ import{ ADD_PRODUCT} from "../../Redux/actions/action-types"
+ export const AddProduct = () => {
   const [name, setName]= useState("");
 const [details, setDetails] = useState ("");
 const [amount ,setAmount] = useState(0)

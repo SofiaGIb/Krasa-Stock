@@ -1,14 +1,14 @@
-import { ADD_PRODUCT } from "../actions/action-types/action-types";
-
+import {ALL_PRODUCT} from "../actions/action-types"
 const initialState = {
-    product: [],
+    allProducts: [],
 };
 const Reducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_PRODUCT:
+        case ALL_PRODUCT:
       return {
         ...state,
-        product: [...state.product, action.payload], 
+        allProducts: action.payload,
+        // [...state.allProducts, action.payload], 
     };
     default:
         return state;
