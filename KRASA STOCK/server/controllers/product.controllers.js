@@ -3,15 +3,14 @@ const prisma = new PrismaClient();
 
 const productAll = async (req, res) => {
   try {
-    const products = await prisma.product.findMany({
+    const productsAll = await prisma.product.findMany({
       orderBy:{
         amount:"asc",
 
       },}
     );
-    return res.status(200).json(products);
+   return res.status(200).json(productsAll);
   } catch (error) {
-    console.log({ error });
     res.status(500).json({ error: "Error fetching products" });
   }
 };

@@ -9,7 +9,6 @@ export const Product = () =>{
 const dispatch = useDispatch();
 const products = useSelector((state)=>state.allProducts);
 
-console.log(products);
 
 useEffect(()=>{
   dispatch(allProduct());
@@ -23,11 +22,15 @@ useEffect(()=>{
     <div>
       <h2>LISTADO DE PRODUCTOS</h2>
 
-      <ol>
-        {products.map((product) => (
-          <product key={product.id} name={product.name} details={product.details} amount={product.amount}></product>
-        ))}
-      </ol>
+    <ul>
+      {products.map((product)=>(
+        <li key={product.id}>
+        <h3>{product.name}</h3>
+        <p>{product.description}</p>
+        <h4>{product.amount}</h4>
+        </li>
+      ))}
+    </ul>
     </div>
   );
 }

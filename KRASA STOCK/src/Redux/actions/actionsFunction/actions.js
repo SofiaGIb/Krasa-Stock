@@ -7,9 +7,7 @@ export const allProduct = ()=>{
     {
         try {
             const json = await axios.get("http://localhost:3001/products");
-            console.log(json);
             const data = json.data;
-            console.log(json.data);
             return dispatch({
                 type:ALL_PRODUCT,
                 payload :data,
@@ -19,6 +17,20 @@ export const allProduct = ()=>{
         catch (error) {
             console.log(error);
             alert (error.response.data.error);
+        }
+    }
+}
+export const postProduct =(payload)=>{
+
+    return async function (dispatch){
+        try {
+            const response = await axios.post("http://localhost:3001/products",payload)
+            return dispatch({
+                type:ADD_PRODUCT,
+                payload:response.data,
+            })
+        } catch (error) {
+            console.log(error);
         }
     }
 }
