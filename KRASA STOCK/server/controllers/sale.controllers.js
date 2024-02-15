@@ -4,11 +4,21 @@ const prisma = new PrismaClient();
  
 const sales = async(req,res) =>{
     try {
-        const { productId, total } = req.body;
+        const { productName, total } = req.body;
 
+        const newSale = await prisma.sale.create({
+          data: {
+            productName : productName,
+            total :total,
+            date: new Date()
+            
+          }
+        }
+        ); 
+        
         const product = await prisma.product.findUnique({
             where: {
-              id: productId,
+              name: productName,
             },
           });
           if (!product) {
@@ -18,9 +28,10 @@ const sales = async(req,res) =>{
           if (product.amount < total) {
             return res.status(400).json({ error: 'Insufficient stock' });
           }
+
       const update = await prisma.product.update({
         where:{
-          id :productId,
+          name:productName,
         },
         data:{
           amount :{
@@ -29,6 +40,9 @@ const sales = async(req,res) =>{
         },
       });
       return update;
+
+
+     
     } catch (error) {
       console.log(error);
     }

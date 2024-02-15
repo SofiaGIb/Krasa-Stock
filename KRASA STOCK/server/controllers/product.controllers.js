@@ -52,6 +52,7 @@ const createProduct = async (name,description,amount) => {
 //!-----------------------------------------------------------------------------------------------------
 
 const deletProduct = async (name) => {
+  console.log(name);
   try {
     const product =  await prisma.product.delete({
       where : {name : name}
