@@ -1,9 +1,9 @@
 const { Router } = require('express')
-const {amountUpdate} = require("../handlers/sale.handlers");
+const {amountUpdate, totalSale} = require("../handlers/sale.handlers");
 const saleRouter = Router();
 
 
 saleRouter.post("/",amountUpdate)
-
+saleRouter.get("/",totalSale)
 module.exports =
     saleRouter

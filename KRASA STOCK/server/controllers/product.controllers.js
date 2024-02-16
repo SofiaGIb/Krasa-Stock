@@ -39,7 +39,7 @@ const createProduct = async (name,description,amount) => {
   try {
     const newProduct = await prisma.product.create({
       data: {
-        name: name,
+        name: name.trim(),
         description: description,
         amount: parseInt(amount),
       },
@@ -55,7 +55,7 @@ const deletProduct = async (name) => {
   console.log(name);
   try {
     const product =  await prisma.product.delete({
-      where : {name : name}
+      where : {name: name}
     })
     return product;
   } catch (error) {

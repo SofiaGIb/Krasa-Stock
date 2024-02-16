@@ -38,7 +38,9 @@ const newProduct = async (req,res) => {
 
 const productoDelete = async (req, res) => {
   try {
+    
     const { name } = req.params;
+    console.log("Nombre del producto a eliminar:", name)
     console.log(name);
     res.status(200).json(await deletProduct(name));
   } catch (error) {

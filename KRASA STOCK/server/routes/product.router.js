@@ -8,6 +8,6 @@ const productRouter = Router()
 productRouter.delete("/:name",productoDelete);
 productRouter.get("/:name",productFound);
 productRouter.get("/",allProduct);
-productRouter.post('/',newProduct)
+productRouter.post('/',newProduct);
 
 module.exports = productRouter;
