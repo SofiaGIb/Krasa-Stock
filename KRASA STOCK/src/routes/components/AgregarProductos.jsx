@@ -1,44 +1,4 @@
-// import React, { useState} from "react";
-// import {useSelector,useDispatch} from "react-redux";
-// import {postProduct}  from "../../Redux/actions/actionsFunction/actions"
-// export const AddProduct = () => {
 
-//   const [name, setName]= useState("");
-// const [description, setdescription] = useState ("");
-// const [amount ,setAmount] = useState(0)
-
-
-// const dispatch = useDispatch();
-// const product = useSelector( (state)=>state.products)
-  
-// const handleSubmit  = (event)=>{
-//   event.preventDefault()
-//   dispatch(postProduct({name,description,amount}))
-//   //limpia los campos luego que los envio 
-//   setName("");
-//   setdescription("");
-//   setAmount(0);
-
-// }
-//   return (
-//     <div>
-//   {<h3>CREAR NUEVO PRODUCTO</h3>};
-//     <form action="" onSubmit={ handleSubmit}>
-//       <input type="text" placeholder="name" value={name} onChange={(event)=>setName(event.target.value)}/>
-//       <input type="text" placeholder="description" value={description} onChange={(event)=>setdescription(event.target.value)}/>
-//       <input type="number" placeholder="amount" value={amount} onChange={(event)=>setAmount(event.target.value)} />
-
-//       <button type="submit" className="btn btn-primary" onClick={handleSubmit}>CREAR</button>
-//     </form>
-//     <h1>PRODUCTO CREADO</h1>
-//     <ul>
-//         
-//       </ul>
-// </div>
-    
-
-//   )
-// }
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { postProduct } from "../../Redux/actions/actionsFunction/actions";
@@ -69,7 +29,7 @@ export const AddProduct = () => {
     <div>
       <h3>CREAR NUEVO PRODUCTO</h3>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="name" value={name} onChange={(event) => setName(event.target.value)} />
+        <input type="text" placeholder="name" value={name.includes(' ') ? name : name.trim()} onChange={(event) => setName(event.target.value)} />
         <input type="text" placeholder="description" value={description} onChange={(event) => setDescription(event.target.value)} />
         <input type="number" placeholder="amount" value={amount} onChange={(event) => setAmount(event.target.value)} />
         <button type="submit" className="btn btn-primary">CREAR</button>

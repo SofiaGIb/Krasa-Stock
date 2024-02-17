@@ -31,8 +31,8 @@ function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="Categoria2">
-                  CATEGORIA 2
+                <NavLink className="nav-link" to="Ventas">
+                  VENTAS
                 </NavLink>
               </li>
               <li className="nav-item">

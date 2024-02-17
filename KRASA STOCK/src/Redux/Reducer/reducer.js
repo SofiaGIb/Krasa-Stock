@@ -1,8 +1,14 @@
-import { ADD_PRODUCT, ALL_PRODUCT, PRODUCT_SALE, TOTAL_SALE } from "../actions/action-types";
+import {
+  ADD_PRODUCT,
+  ALL_PRODUCT,
+  DELETE_PRODUCT,
+  FOUND_PRODUCTS,
+SOLD_PRODUCTS} from "../actions/action-types";
 const initialState = {
   allProducts: [],
   products: [],
-  SALE: [],
+  sales: [],
+  foundProduct:[]
 };
 const Reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,10 +22,27 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
       };
-    case PRODUCT_SALE:
-      return {};
-    case TOTAL_SALE:
-      return {};
+    case SOLD_PRODUCTS:
+      return {
+        ...state,
+        sales: action.payload
+      };
+
+
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+      };
+      
+      case FOUND_PRODUCTS:
+        return {
+          ...state,
+          products : action.payload
+        }
+
+         
+
+    
     default:
       return state;
   }

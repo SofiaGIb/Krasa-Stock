@@ -1,4 +1,5 @@
 export const ADD_PRODUCT = " ADD_PRODUCT";
-export const PRODUCT_SALE = "PRODUCT_SALE";
-export const TOTAL_SALE = "TOTAL_SALE";
-export const ALL_PRODUCT = "ALL_PRODUCT"
+export const ALL_PRODUCT = "ALL_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const SOLD_PRODUCTS ="SOLD_PRODUCTS";
+export const FOUND_PRODUCTS = "FOUND_PRODUCTS"
