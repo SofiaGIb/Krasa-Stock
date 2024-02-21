@@ -23,11 +23,12 @@ const found = async (req, res) => {
       where: {
         name: {
           contains: name,
+          mode: "insensitive"
         },
       },
     });
-
     res.status(200).json(product);
+    console.log(product,"el producto fue encontrado");
   } catch (error) {
     console.error("Error buscando el producto:", error);
     res.status(500).json({ error: "Error buscando el producto" });

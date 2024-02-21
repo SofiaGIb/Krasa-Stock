@@ -14,8 +14,10 @@ const productFound = async (req, res) => {
   try {
     
     const encontrado = await found(req,res)
-    res.status(200).json(encontrado);
-  } catch (error) {
+    res.status(200)
+    } 
+  
+  catch (error) {
     res.status(500).json({ error: "Error buscando el producto" });
   }
 };
