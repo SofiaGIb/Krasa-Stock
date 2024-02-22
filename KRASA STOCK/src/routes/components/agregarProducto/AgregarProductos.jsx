@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { postProduct } from "../../Redux/actions/actionsFunction/actions";
+import { postProduct } from "../../../Redux/actions/actionsFunction/actions";
 
 export const AddProduct = () => {
   const [name, setName] = useState("");

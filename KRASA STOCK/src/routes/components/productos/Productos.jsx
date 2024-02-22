@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { allProduct, deletProduct } from "../../Redux/actions/actionsFunction/actions";
-import SearchBar from "../Searchbar";
+import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
+import SearchBar from "../searchBar/Searchbar";
+import "./productos.css"
 
 export const Product = () => {
 
-
   const dispatch = useDispatch();
   const products = useSelector((state) => state.allProducts);
-
   useEffect(() => {
     dispatch(allProduct());
-  }, [dispatch]);
+  }, []);
 
   const handleDelete = (name) => {
     dispatch(deletProduct(name));
@@ -24,7 +23,7 @@ export const Product = () => {
       <h2>LISTADO DE PRODUCTOS</h2>
 
         <SearchBar></SearchBar>
-      <ul>
+      <ul className="color">
         {products.map((product) => (
           <li key={product.id}>
             <h3>{product.name}</h3>

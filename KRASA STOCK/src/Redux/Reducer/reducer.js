@@ -16,6 +16,7 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         allProducts: action.payload,
+        products:action.payload
         // [...state.allProducts, action.payload],
       };
     case ADD_PRODUCT:
@@ -37,9 +38,8 @@ const Reducer = (state = initialState, action) => {
       case FOUND_PRODUCTS:
         return {
           ...state,
-          products : action.payload
-        }
-
+      products: action.payload
+        };
          
 
     

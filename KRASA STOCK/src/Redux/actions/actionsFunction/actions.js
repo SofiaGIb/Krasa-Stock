@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, SOLD_PRODUCTS, ALL_PRODUCT, DELETE_PRODUCT, FOUND_PRODUCTS } from "../action-types";
+import { ADD_PRODUCT, SOLD_PRODUCTS, ALL_PRODUCT, DELETE_PRODUCT,FOUND_PRODUCTS } from "../action-types";
 import axios from "axios";
 
 export const allProduct = () => {
@@ -60,21 +60,16 @@ export const soldProduct = () => {
 };
 
 export const foundProduct = (name)=>{
-  return async function (dispatch) {
+  return async  (dispatch) => {
     
    
-      await axios.get(`http://localhost:3001/products/${name}`)
-      .then((response) => response.data)
-      .then((data) => {
-        data.length === 0
-          ? alert("Pokemon does not exist")
-          : dispatch({
-              type: FOUND_PRODUCTS,
-              payload: data,
-            });
-   
-    } )
-    .catch ((error)=> error.response) 
-    
-    
+     const response = await axios.get(`http://localhost:3001/products/${name}`)
+   const data = response.data; 
+   data.length === 0 ? "producto no encontrado" : 
+   dispatch({
+    type: FOUND_PRODUCTS,
+    payload:data
+   })
+
+
   }}

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { soldProduct } from "../../Redux/actions/actionsFunction/actions";
+import { soldProduct } from "../../../Redux/actions/actionsFunction/actions";
 
 function Ventas() {
   const dispatch = useDispatch();
@@ -16,7 +16,9 @@ function Ventas() {
       <li>
         {sold.map((sale) => (
           <li key={sale.id}>
-            <h3>{sale.productName}</h3>
+            <h2>{sale.productName}</h2>
+            <h4> se vendieron :{sale.total}</h4>
+            <h4> el : {sale.date}</h4>
           </li>
         ))}
       </li>

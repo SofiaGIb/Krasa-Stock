@@ -1,10 +1,10 @@
 import { useState } from "react";
-import NavBar from "./routes/components/NavBar";
+import NavBar from "./routes/components/navBar/NavBar";
 import Logueo from "./routes/components/Logueo";
-import Ventas from "./routes/components/Ventas";
+import Ventas from "./routes/components/ventas/Ventas";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { AddProduct } from "./routes/components/AgregarProductos";
-import Product from "./routes/components/Productos";
+import { AddProduct } from "./routes/components/agregarProducto/AgregarProductos";
+import Product from "./routes/components/productos/Productos";
 function App() {
   const [count, setCount] = useState(0);
 
