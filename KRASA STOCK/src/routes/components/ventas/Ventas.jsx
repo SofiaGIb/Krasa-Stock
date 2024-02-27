@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { soldProduct } from "../../../Redux/actions/actionsFunction/actions";
+import { soldProduct } from "../../Redux/actions/actionsFunction/actions";
 
 function Ventas() {
   const dispatch = useDispatch();
@@ -9,7 +9,8 @@ function Ventas() {
   useEffect(() => {
     dispatch(soldProduct());
   }, [dispatch]);
-
+  const format = (date,locale,options)=> new Intl.DateTimeFormat(locale,options).format(date)
+  const now = new Date()
   return (
     <div>
       <h1>lista de productos vendidos </h1>
@@ -19,6 +20,8 @@ function Ventas() {
             <h2>{sale.productName}</h2>
             <h4> se vendieron :{sale.total}</h4>
             <h4> el : {sale.date}</h4>
+            
+            date:format(now,"es")
           </li>
         ))}
       </li>

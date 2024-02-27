@@ -1,15 +1,19 @@
 const { PrismaClient } = require("@prisma/client");
+const { format } = require("path");
 const prisma = new PrismaClient();
 
 const sales = async (req, res) => {
   const { productName, total } = req.body;
+const format = (date,locale,options)=> new Intl.DateTimeFormat(locale,options).format(date)
+const now = new Date()
+const date = format(now,"es")
   try {
 
   const newSale = await prisma.sale.create({
     data: {
       productName: productName,
       total: total,
-      date: new Date(),
+      date:date
     },
   });
 

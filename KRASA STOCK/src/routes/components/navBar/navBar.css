@@ -1,11 +1,28 @@
 .contenedor{
-    background-color: rgb(66, 66, 74) !important;
+    background-color: rgb(101, 101, 105) ;
+    overflow: hidden;
+    padding: 10px;
 }
 .ul{
     list-style-type:none;    
 }
 
-.li{
+.li {
+    border-right: 2px solid  rgb(232, 245, 237) ;
     float: left;
-    padding: 10px;
 } 
+.li a {
+    display: block;
+    color: rgb(240, 243, 241);
+    text-align: center;
+    padding: 10px 25px;
+    text-decoration: none;
+}
+.active{
+
+    background-color: coral;
+}
+
+.li a:hover:not(.active){
+    background-color: #d986d9;
+}

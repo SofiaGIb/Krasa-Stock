@@ -1,0 +1,86 @@
+.caja{
+ background-color: #efbcce;
+ border-radius: 15px;
+ align-content: center;
+ margin-left: auto;
+ margin-right: auto;
+width: 60%;
+right:80%;
+padding:  20px;
+margin-top: 10vh;
+
+}
+.form{
+    padding:  20px 20px 20px 20px ;
+    display: flex;
+    border: 5px solid #c54c82;
+    background-color:#f4aeba;
+    flex-direction: column;
+}
+.form>input{
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 20px ;
+    background-color: rgb(248, 223, 247);
+    font-size:larger;
+}
+.form>input:focus{
+    font-size: 30px;
+    font-weight: bold;
+    transform: scale(1.0);
+    transition: transform 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.titulo{
+    
+text-align: center;
+margin: 0;
+padding: 20px 0;
+color: #2b2b2c;
+text-shadow: 3px 3px 1px black;
+}
+.new{
+    background-color: rgb(238, 214, 228);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Centra y escala a 0 para empezar */
+    transition: transform 0.5s ease; /* Transición suave de la escala */
+    z-index: 1000; /* Para asegurarse de que esté por encima de otros elementos */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: showNewProduct 2s forwards; 
+    background-color: rgb(238, 214, 228);
+}
+
+@keyframes showNewProduct {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2); /* Escala a 120% a la mitad de la animación */
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }  
+  .new.hidden{
+    display: none;
+  }
+.title2{
+    text-align: center;
+}
+.bottonc{
+    border-radius: 10px;
+    padding-top: 10px;
+margin: 20px 20px 10px 10px;
+background-color: blueviolet;
+}
+.bottonc:hover{
+    background-color: rgb(230, 142, 133);
+}
+.bottonc:active{
+    background-color: burlywood;
+}

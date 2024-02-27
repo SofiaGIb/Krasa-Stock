@@ -3,15 +3,17 @@
 
 
 }
+.active{
 
+  background-color: coral;
+}
+
+.li a :hover:not(.active){
+  background-color: blueviolet;
+}
 
 
 body {
-margin-inline-start: auto;
-  display: flex;
-  place-items:initial;
-  min-width: 320px;
-  min-height: 100vh;
    background: linear-gradient(109.6deg, rgb(235, 173, 254) 11.2%, rgb(254, 150, 150) 90.4%);
 }
 

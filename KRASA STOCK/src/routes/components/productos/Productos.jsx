@@ -3,10 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
 import SearchBar from "../searchBar/Searchbar";
-import "./productos.css"
+import "./productos.css";
 
 export const Product = () => {
-
   const dispatch = useDispatch();
   const products = useSelector((state) => state.allProducts);
   useEffect(() => {
@@ -19,20 +18,25 @@ export const Product = () => {
 
   <h1>lista de productos</h1>;
   return (
-    <div>
-      <h2>LISTADO DE PRODUCTOS</h2>
+    <div className="contenedorp">
+      <h2 className="h2">LISTADO DE PRODUCTOS</h2>
 
-        <SearchBar></SearchBar>
-      <ul className="color">
-        {products.map((product) => (
-          <li key={product.id}>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <h4>{product.amount}</h4>
-            <button onClick={() => handleDelete(product.name)}>ELIMINAR</button>
-          </li>
-        ))}
-      </ul>
+      <SearchBar></SearchBar>
+      <div className="cajap">
+        <ul className="color">
+          {products.map((product) => (
+            <li className="list" key={product.id}>
+              <p> {product.name}</p>
+              <p>description: {product.description}</p>
+              <button className="material" onClick={() => handleDelete(product.name)}>
+                {" "}
+                <span class="material-symbols-outlined">delete</span>
+              </button>
+              <p>Cantidad : {product.amount}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

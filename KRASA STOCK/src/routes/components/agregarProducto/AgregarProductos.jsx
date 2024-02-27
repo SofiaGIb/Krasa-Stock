@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { postProduct } from "../../../Redux/actions/actionsFunction/actions";
+import "./agregarProducto.css"
+
+
 
 export const AddProduct = () => {
   const [name, setName] = useState("");
@@ -24,24 +27,29 @@ export const AddProduct = () => {
     setDescription("");
     setAmount(0);
   };
+  setTimeout(() => {
+    setIsProductCreated(false);
+    document.querySelector(".new").classList.add("hidden");
+  }, 9000); // 5sg
+  
 
   return (
-    <div>
-      <h3>CREAR NUEVO PRODUCTO</h3>
-      <form onSubmit={handleSubmit}>
+    <div  className="caja" >
+      <h3 className="titulo" >CREAR NUEVO PRODUCTO</h3>
+      <form  className="form" onSubmit={handleSubmit}>
         <input type="text" placeholder="name" value={name.includes(' ') ? name : name.trim()} onChange={(event) => setName(event.target.value)} />
         <input type="text" placeholder="description" value={description} onChange={(event) => setDescription(event.target.value)} />
         <input type="number" placeholder="amount" value={amount} onChange={(event) => setAmount(event.target.value)} />
-        <button type="submit" className="btn btn-primary">CREAR</button>
+        <button   type="submit" className="bottonc">CREAR</button>
       </form>
 
       {isProductCreated && (
-        <div>
-          <h1>PRODUCTO CREADO</h1>
+        <div className="new">
+          <h1 className="title2">PRODUCTO CREADO</h1>
           <ul>
             <li>
               <h3>{createdProduct.name}
-              ,{createdProduct.description}</h3>
+              ,{createdProduct.description},{createdProduct.amount}</h3>
           
             </li>
           </ul>
