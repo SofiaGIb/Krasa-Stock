@@ -15,16 +15,13 @@ model Product {
   name        String  @unique
   description String?
   amount      Int
-sales Sale[]
+  sales       Sale[]
 }
 
 model Sale {
-  
-id Int @id @default(autoincrement())
-total Int 
-productName String
-product Product @relation(fields:[productName],references:[name] ,onDelete: Cascade)
-date DateTime @default(now())
-
-
+  id          Int      @id @default(autoincrement())
+  total       Int
+  productName String
+  product     Product  @relation(fields: [productName], references: [name], onDelete: Cascade)
+  date        DateTime @default(now())
 }

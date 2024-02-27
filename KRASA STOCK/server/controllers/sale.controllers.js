@@ -1,21 +1,24 @@
 const { PrismaClient } = require("@prisma/client");
-const { format } = require("path");
+const { format } = require('date-fns');
 const prisma = new PrismaClient();
+
+
 
 const sales = async (req, res) => {
   const { productName, total } = req.body;
-const format = (date,locale,options)=> new Intl.DateTimeFormat(locale,options).format(date)
-const now = new Date()
-const date = format(now,"es")
+  const formatDate =  format(new Date(sale.date),'yy/MM/dd');
+console.log(formatDate);
+
   try {
 
   const newSale = await prisma.sale.create({
     data: {
       productName: productName,
       total: total,
-      date:date
+      date:formatDate
     },
   });
+  console.log(date);
 
 
      const product = await prisma.product.findUnique({
