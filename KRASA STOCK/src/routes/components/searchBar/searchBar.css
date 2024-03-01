@@ -1,0 +1,33 @@
+.cajad{
+    align-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;  
+    margin-right: 20px;
+}
+.cajad>input{
+    
+    margin: 10px;
+    align-content: center;
+    margin-left: 240px;
+    padding-inline: 150px;
+    position: relative;
+    padding: 25px;
+    width: 800px;
+    border-radius: 15px;
+    border:7px groove  #de8787;
+    transition: transform 0.3s ease; 
+    height: 20px;
+    align-content: center;
+
+    
+}
+.cajad > input:focus {
+    transform: scale(1.2); /* Escalamos el input al 110% cuando está enfocado */
+}
+input:hover{
+    transform: scale(1.1); /* Escalamos el input al 110% cuando está enfocado */
+
+    background-color: rgb(194, 224, 158);
+}
+
+

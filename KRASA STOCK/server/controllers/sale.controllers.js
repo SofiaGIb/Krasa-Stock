@@ -6,8 +6,6 @@ const prisma = new PrismaClient();
 
 const sales = async (req, res) => {
   const { productName, total } = req.body;
-  const formatDate =  format(new Date(sale.date),'yy/MM/dd');
-console.log(formatDate);
 
   try {
 
@@ -15,10 +13,8 @@ console.log(formatDate);
     data: {
       productName: productName,
       total: total,
-      date:formatDate
     },
   });
-  console.log(date);
 
 
      const product = await prisma.product.findUnique({
@@ -45,9 +41,9 @@ console.log(formatDate);
      },
    });
    return  update;
-
+res.status(200).json(product,newSale)
 } catch (error) {
-   console.log(error);
+res.status(500).json({error:'error' + error.message})
  } }
 //!........................................................
 const salesAll = async (req, res) => {

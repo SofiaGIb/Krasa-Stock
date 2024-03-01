@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { foundProduct } from '../../../Redux/actions/actionsFunction/actions'; // Asumiendo que tienes una acción llamada searchProduct
-
+import "./search"
 const SearchBar = () => {
 const dispatch = useDispatch();
 const handleName = (event)=>{
@@ -10,8 +10,10 @@ const handleName = (event)=>{
   dispatch (foundProduct(value))
 };
  return (
+<div className='cajad'>
 
-    <input type="text" placeholder='producto... '  onChange={handleName} />
+  <input type="text" placeholder='producto... '  onChange={handleName} />
+</div>
   
  )
 

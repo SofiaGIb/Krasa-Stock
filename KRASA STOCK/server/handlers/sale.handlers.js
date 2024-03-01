@@ -4,8 +4,7 @@ const {sales, salesAll} = require ("../controllers/sale.controllers")
 const amountUpdate = async (req,res)=>{
     try {
       const result = await sales(req,res);
-      console.log(result);
-      res.status(200).json(result);
+      res.status(200).json( {message:"la venta se creo con exito "});
     } catch (error) {
       
       console.log(error);
