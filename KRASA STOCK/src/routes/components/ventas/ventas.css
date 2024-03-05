@@ -1,0 +1,47 @@
+.cajav{    
+   background-color: #efbcce;
+    border-radius: 15px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+   width: 80%;
+   right:40%;
+   padding:  20px;
+   margin-top: 10vh;
+    
+}
+
+.listv{
+    background-color: #c9b1b1;
+    border-style:groove #efe8e8;
+    align-content: center;
+    padding: 10px ;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    position: relative
+}
+.titulo2{
+    text-decoration:dotted;
+    color: rgb(60, 60, 73);
+}
+.titulop{
+    text-align: center;
+    padding: 15px;
+    color: black;
+    font-size: bold;
+
+}
+.cajapr{
+    border-radius: 15px;
+  margin-top: 20px;
+    max-height:700px;
+    overflow:auto;
+    padding: 25px;
+    background-color: rgb(244, 131, 131);
+
+}
+.cajapr::-webkit-scrollbar {
+    width: 0; /* Oculta la barra de desplazamiento en navegadores webkit (Chrome, Safari, etc.) */
+}

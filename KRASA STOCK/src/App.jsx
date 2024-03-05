@@ -5,6 +5,7 @@ import Ventas from "./routes/components/ventas/Ventas";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AddProduct } from "./routes/components/agregarProducto/AgregarProductos";
 import Product from "./routes/components/productos/Productos";
+import AddVentas from "./routes/components/agregarVentas/addVentas";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="Ventas" element={<Ventas></Ventas>}></Route>
           <Route path="*" element={<Navigate to="/" />}></Route>
           <Route path="/Productos" element={<Product></Product>}></Route>
+          <Route path="/AddVentas" element={<AddVentas></AddVentas>}></Route>
         </Routes>
       </div>
     </>

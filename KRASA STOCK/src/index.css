@@ -12,9 +12,27 @@
   background-color: blueviolet;
 }
 
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 body {
-   background: linear-gradient(109.6deg, rgb(235, 173, 254) 11.2%, rgb(254, 150, 150) 90.4%);
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 600;
+  font-style: bold;
+  color: rgb(131, 20, 107);
+
+
+background-color: rgba(167, 138, 175, 0.716);  
 }
 
 

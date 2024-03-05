@@ -1,4 +1,11 @@
-import { ADD_PRODUCT, SOLD_PRODUCTS, ALL_PRODUCT, DELETE_PRODUCT,FOUND_PRODUCTS } from "../action-types";
+import {
+  ADD_PRODUCT,
+  SALE_PRODUCTS,
+  ALL_PRODUCT,
+  DELETE_PRODUCT,
+  FOUND_PRODUCTS,
+  ADD_SALE,
+} from "../action-types";
 import axios from "axios";
 
 export const allProduct = () => {
@@ -44,32 +51,54 @@ export const deletProduct = (name) => {
     }
   };
 };
-export const soldProduct = () => {
+export const saleProduct = (payload) => {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3001/sale`);
-      const data = response.data
+      const response = await axios.get(`http://localhost:3001/sale`, payload);
+      const data = response.data;
       return dispatch({
-        type: SOLD_PRODUCTS,
+        type: SALE_PRODUCTS,
         payload: data,
       });
     } catch (error) {
-      return (error.response.data.error);
+      console.log(error);
+      return error.response.data.error;
     }
   };
 };
 
-export const foundProduct = (name)=>{
-  return async  (dispatch) => {
-    
-   
-     const response = await axios.get(`http://localhost:3001/products/${name}`)
-   const data = response.data; 
-   data.length === 0 ? "producto no encontrado" : 
-   dispatch({
-    type: FOUND_PRODUCTS,
-    payload:data
-   })
-
-
-  }}
+export const foundProduct = (name) => {
+  return async (dispatch) => {
+    console.log(name);
+    try {
+      const response = await axios.get(`http://localhost:3001/products/${name}`);
+      const data = response.data;
+      console.log(data);
+      data.length === 0
+        ? "producto no encontrado"
+        : dispatch({
+            type: FOUND_PRODUCTS,
+            payload: data,
+          });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const addSale = (payload) => {
+  return async (dispatch) => {
+    try {
+      console.log(payload);
+      const response = await axios.post("http://localhost:3001/sale", payload);
+      console.log(response);
+      const data = response.data;
+      console.log(data);
+      dispatch({
+        type: ADD_SALE,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.response.data.error);
+    }
+  };
+};

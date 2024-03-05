@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -12,28 +13,31 @@ export const Product = () => {
     dispatch(allProduct());
   }, []);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleDelete = (name) => {
     dispatch(deletProduct(name));
   };
 
-  <h1>lista de productos</h1>;
   return (
     <div className="contenedorp">
       <h2 className="h2">LISTADO DE PRODUCTOS</h2>
 
-      <SearchBar></SearchBar>
+      <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
       <div className="cajap">
         <ul className="color">
-          {products.map((product) => (
-            <li className="list" key={product.id}>
+          {products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())).map((product) => 
+          (
+            !product?alert("NO EXISTE") : 
+             <li className="list" key={product.id}>
               <p> {product.name}</p>
               <p>description: {product.description}</p>
               <button className="material" onClick={() => handleDelete(product.name)}>
                 {" "}
-                <span class="material-symbols-outlined">delete</span>
+                <span className="material-symbols-outlined">delete</span>
               </button>
               <p>Cantidad : {product.amount}</p>
-            </li>
+            </li> 
           ))}
         </ul>
       </div>

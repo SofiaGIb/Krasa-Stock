@@ -33,7 +33,7 @@ export const AddVentas = () => {
           value={total}
           onChange={(event) => setTotal(event.target.value)}
         />
-        <button type="submit" className="bottonv">CREAR</button>
+        <button type="submit" className="buttonv">CREAR</button>
       </form>
     </div>
   );

@@ -1,30 +1,30 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { soldProduct } from "../../Redux/actions/actionsFunction/actions";
+import { saleProduct} from "../../../Redux/actions/actionsFunction/actions";
+import "./ventas.css"
 
 function Ventas() {
   const dispatch = useDispatch();
   const sold = useSelector((state) => state.sales);
 
   useEffect(() => {
-    dispatch(soldProduct());
+    dispatch(saleProduct());
   }, [dispatch]);
-  const format = (date,locale,options)=> new Intl.DateTimeFormat(locale,options).format(date)
-  const now = new Date()
+
   return (
-    <div>
-      <h1>lista de productos vendidos </h1>
-      <li>
+    <div className="cajav">
+      <h1 className="titulop" >lista de productos vendidos </h1>
+      <ul className="cajapr">
         {sold.map((sale) => (
-          <li key={sale.id}>
-            <h2>{sale.productName}</h2>
-            <h4> se vendieron :{sale.total}</h4>
-            <h4> el : {sale.date}</h4>
+          <li  className="listv"key={sale.id}>
+            <h2 className="titulo2">{sale.productName}</h2>
+            <h4 > se vendieron :{sale.total}</h4>
+            <h4 > el : {sale.date}</h4>
             
-            date:format(now,"es")
+            
           </li>
         ))}
-      </li>
+      </ul>
     </div>
   );
 }

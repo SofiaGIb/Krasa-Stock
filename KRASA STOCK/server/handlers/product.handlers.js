@@ -26,6 +26,10 @@ const newProduct = async (req,res) => {
  try {
   
    const {name,description,amount} = req.body;
+   if(!name || !description || !amount) return res.status(400).json({
+    message:"lOS CAMPOS NAME,DESCRIPTION Y AMOUNT DEBEN SER COMPLETADOS "
+   })
+
    const nuevoProducto = await createProduct(name,description,amount)
    res.status(200).json({ message: 'PRODUCTO CREADO CON EXITO', product: nuevoProducto });
   } catch (error) {
