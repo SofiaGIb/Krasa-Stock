@@ -1,5 +1,5 @@
 const { createProduct } = require("../controllers/product.controllers.js");
-const { productAll, deletProduct, found } = require("../controllers/product.controllers.js");
+const { productAll, deletProduct, found,stockChange } = require("../controllers/product.controllers.js");
 
 const allProduct = async (req, res) => {
   try {
@@ -39,7 +39,18 @@ const newProduct = async (req,res) => {
   }
 
 };
-
+//!-----------------------------------------------------------------------------------------------------
+const newAmount = async (req,res)=>{
+  try {
+    const {name,amount} = req.body;
+    if (!name || !amount ) return res.status(400).json({message:"Los campos son requeridos"});
+    const newStock = await stockChange(name,amount)
+    res.status(200).json({message:'El stock fue modificado el nuevo stock es de :', stock: newStock})
+  } catch (error) {
+    console.log({error});
+    res.status(500).json({ error: error.message });
+  }
+}
 //!-----------------------------------------------------------------------------------------------------
 
 const productoDelete = async (req, res) => {
@@ -63,4 +74,5 @@ module.exports = {
   allProduct,
   productoDelete,
   productFound,
+  newAmount
 };

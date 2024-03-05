@@ -4,12 +4,11 @@ const prisma = new PrismaClient();
 const productAll = async (req, res) => {
   try {
     const productsAll = await prisma.product.findMany({
-      orderBy:{
-        amount:"asc",
-
-      },}
-    );
-   return res.status(200).json(productsAll);
+      orderBy: {
+        amount: "asc",
+      },
+    });
+    return res.status(200).json(productsAll);
   } catch (error) {
     res.status(500).json({ error: "Error fetching products" });
   }
@@ -23,20 +22,38 @@ const found = async (req, res) => {
       where: {
         name: {
           contains: name,
-          mode: "insensitive"
+          mode: "insensitive",
         },
       },
     });
     res.status(200).json(product);
-    console.log(product,"el producto fue encontrado");
+    console.log(product, "el producto fue encontrado");
   } catch (error) {
     console.error("Error buscando el producto:", error);
     res.status(500).json({ error: "Error buscando el producto" });
   }
 };
+//!-----------------------------------------------------------------------------------------------------
+const stockChange = async (name, amount) => {
+  try {
+    const newStock = await prisma.product.update({
+      where: {
+        name: name,
+      },
+      data:{
+        amount :{
+
+          increment :amount, 
+        }
+      }
+    });
+  } catch (error) {
+    console.log({message : error});
+  }
+};
 
 //!-----------------------------------------------------------------------------------------------------
-const createProduct = async (name,description,amount) => {
+const createProduct = async (name, description, amount) => {
   try {
     const newProduct = await prisma.product.create({
       data: {
@@ -55,12 +72,13 @@ const createProduct = async (name,description,amount) => {
 const deletProduct = async (name) => {
   console.log(name);
   try {
-    const product =  await prisma.product.delete({
-      where : {name: name}
-    })
+    const product = await prisma.product.delete({
+      where: { name: name },
+    });
     return product;
   } catch (error) {
-console.log(error);  }
+    console.log(error);
+  }
 };
 
 //!-----------------------------------------------------------------------------------------------------
@@ -70,4 +88,5 @@ module.exports = {
   productAll,
   deletProduct,
   found,
+  stockChange
 };
