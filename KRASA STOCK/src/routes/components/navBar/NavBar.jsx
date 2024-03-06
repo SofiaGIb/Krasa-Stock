@@ -11,6 +11,9 @@ function NavBar() {
           <NavLink exact to="/" activeClassName="active">LOGUEO</NavLink>
         </li>
         <li className="li">
+          <NavLink exact to="/stock" activeClassName="active">Stock</NavLink>
+        </li>
+        <li className="li">
           <NavLink to="/addProducto" activeClassName="active">AGREGAR PRODUCTO</NavLink>
         </li>
         <li className="li">

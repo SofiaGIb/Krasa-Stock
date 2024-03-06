@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NavBar from "./routes/components/navBar/NavBar";
 import Logueo from "./routes/components/Logueo";
+import Stock from "./routes/components/stock/Stock";
 import Ventas from "./routes/components/ventas/Ventas";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AddProduct } from "./routes/components/agregarProducto/AgregarProductos";
@@ -20,6 +21,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />}></Route>
           <Route path="/Productos" element={<Product></Product>}></Route>
           <Route path="/AddVentas" element={<AddVentas></AddVentas>}></Route>
+          <Route path="/stock"  element={<Stock></Stock>}></Route>
         </Routes>
       </div>
     </>

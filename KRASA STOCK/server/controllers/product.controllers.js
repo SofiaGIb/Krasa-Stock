@@ -26,8 +26,7 @@ const found = async (req, res) => {
         },
       },
     });
-    res.status(200).json(product);
-    console.log(product, "el producto fue encontrado");
+    res.status(200).json({ "El producto encontrado es" : product});
   } catch (error) {
     console.error("Error buscando el producto:", error);
     res.status(500).json({ error: "Error buscando el producto" });
@@ -47,8 +46,10 @@ const stockChange = async (name, amount) => {
         }
       }
     });
+    return { success: true, newStock: newStock };
+
   } catch (error) {
-    console.log({message : error});
+    return { success: false, error: error.message };
   }
 };
 
@@ -62,6 +63,8 @@ const createProduct = async (name, description, amount) => {
         amount: parseInt(amount),
       },
     });
+    return { success: true, newProduct: newProduct };
+
   } catch (error) {
     console.log({ error });
   }

@@ -14,13 +14,28 @@
     background-color: rgb(244, 131, 131);
 
 }
+.red {
+  background-color:  rgb(245, 107, 107) !important; /* Cambia el borde a rojo */
+    animation: pulse 1s infinite alternate; /* Agrega un efecto de latido */
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.04);
+    }
+  }
+  
+  
  .h2 {
     text-align: center;
     padding: 15px;;
  }
  .list{
-    background-color: #a18e8e;
-    border: solid #efe8e8;
+    background-color: #d0b7b7;
+    border: 3px solid #efe8e8;
     align-content: center;
     padding: 10px ;
     border-radius: 10px;

@@ -4,20 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import "./AddVentas.css";
 
 export const AddVentas = () => {
-  
   const dispatch = useDispatch();
   const sale = useSelector((state) => state.sales.sales);
   const [productName, setProductName] = useState("");
- const [total,setTotal] = useState(0)
-  
-   
+  const [total, setTotal] = useState(0);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const totalvalue = parseInt(total)
-    const newSale = { productName, total:totalvalue };
+    const totalvalue = parseInt(total);
+    const newSale = { productName, total: totalvalue };
     await dispatch(addSale(newSale));
   };
-  
+
   return (
     <div className="cajav">
       <form onSubmit={handleSubmit} className="formv">
@@ -33,7 +31,9 @@ export const AddVentas = () => {
           value={total}
           onChange={(event) => setTotal(event.target.value)}
         />
-        <button type="submit" className="buttonv">CREAR</button>
+        <button type="submit" className="buttonv">
+          CREAR
+        </button>
       </form>
     </div>
   );

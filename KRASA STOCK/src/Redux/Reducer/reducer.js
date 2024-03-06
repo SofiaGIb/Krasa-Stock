@@ -4,7 +4,8 @@ import {
   ALL_PRODUCT,
   DELETE_PRODUCT,
   FOUND_PRODUCTS,
-SALE_PRODUCTS} from "../actions/action-types";
+SALE_PRODUCTS,
+NEW_AMOUNT} from "../actions/action-types";
 const initialState = {
   allProducts: [],
   products: [],
@@ -47,7 +48,10 @@ case ADD_SALE:
       foundProducts: action.payload
         };
          
-
+case NEW_AMOUNT:
+  return {
+    ...state 
+  }
     
     default:
       return state;

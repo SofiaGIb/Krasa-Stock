@@ -4,7 +4,7 @@ import {
   ALL_PRODUCT,
   DELETE_PRODUCT,
   FOUND_PRODUCTS,
-  ADD_SALE,
+  ADD_SALE,NEW_AMOUNT
 } from "../action-types";
 import axios from "axios";
 
@@ -69,7 +69,6 @@ export const saleProduct = (payload) => {
 
 export const foundProduct = (name) => {
   return async (dispatch) => {
-    console.log(name);
     try {
       const response = await axios.get(`http://localhost:3001/products/${name}`);
       const data = response.data;
@@ -85,14 +84,30 @@ export const foundProduct = (name) => {
     }
   };
 };
+
+export const newStock = (payload) =>{
+
+  console.log(payload);
+  return async (dispatch)=>{
+    
+    try {
+      const response= await axios.patch(`  http://localhost:3001/products`,payload);
+      const data = response.data;
+      dispatch({
+        type:NEW_AMOUNT,
+        payload:data
+      })
+    } catch (error) {
+      console.log({message :error.message });
+    }
+}
+}
+
 export const addSale = (payload) => {
   return async (dispatch) => {
     try {
-      console.log(payload);
       const response = await axios.post("http://localhost:3001/sale", payload);
-      console.log(response);
       const data = response.data;
-      console.log(data);
       dispatch({
         type: ADD_SALE,
         payload: data,

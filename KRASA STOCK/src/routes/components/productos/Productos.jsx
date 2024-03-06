@@ -28,8 +28,8 @@ export const Product = () => {
         <ul className="color">
           {products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())).map((product) => 
           (
-            !product?alert("NO EXISTE") : 
-             <li className="list" key={product.id}>
+            
+             <li      className={`list ${product.amount < 10 ? 'red' : ''}`}key={product.id}>
               <p> {product.name}</p>
               <p>description: {product.description}</p>
               <button className="material" onClick={() => handleDelete(product.name)}>
