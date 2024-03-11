@@ -15,16 +15,17 @@
 
 }
 .red {
-  background-color:  rgb(245, 107, 107) !important; /* Cambia el borde a rojo */
-    animation: pulse 1s infinite alternate; /* Agrega un efecto de latido */
+    animation:   pulse 3s infinite alternate; 
   }
   
   @keyframes pulse {
-    from {
+    0%, 100% {
       transform: scale(1);
+      background-color: rgb(191, 176, 176); 
     }
-    to {
-      transform: scale(1.04);
+    50% {
+      transform: scale(1.03);
+      background-color: rgb(241, 101, 101); 
     }
   }
   

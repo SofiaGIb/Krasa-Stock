@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addSale } from "../../../Redux/actions/actionsFunction/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddVentas.css";
+import Swal from "sweetalert2";
 
 export const AddVentas = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,13 @@ export const AddVentas = () => {
     const totalvalue = parseInt(total);
     const newSale = { productName, total: totalvalue };
     await dispatch(addSale(newSale));
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "venta registrada",
+      showConfirmButton: false,
+      timer: 1800, // 1.5 segundos
+    });
   };
 
   return (

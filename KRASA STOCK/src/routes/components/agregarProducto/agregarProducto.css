@@ -72,10 +72,15 @@ color: #2b2b2c;
     text-align: center;
 }
 .bottonc{
-    border-radius: 10px;
-    padding-top: 10px;
-margin: 20px 20px 10px 10px;
-background-color: blueviolet;
+
+  width: auto;
+ border-radius: 15px;
+  padding: 18px 10px;
+  margin: 15px 85px;
+  background-color: rgb(167, 111, 219);
+  font-size:  18px;
+  color: aliceblue;
+
 }
 .bottonc:hover{
     background-color: rgb(230, 142, 133);

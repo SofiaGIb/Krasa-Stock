@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saleProduct} from "../../../Redux/actions/actionsFunction/actions";
 import "./ventas.css"
+import Swal from 'sweetalert2'
+
+
+
 
 function Ventas() {
   const dispatch = useDispatch();

@@ -25,6 +25,7 @@ export const allProduct = () => {
 };
 export const postProduct = (payload) => {
   return async function (dispatch) {
+    console.log(dispatch);
     try {
       const response = await axios.post("http://localhost:3001/products", payload);
       return dispatch({
@@ -32,7 +33,7 @@ export const postProduct = (payload) => {
         payload: response.data,
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   };
 };
@@ -44,8 +45,8 @@ export const deletProduct = (name) => {
         type: DELETE_PRODUCT,
         payload: removed.data,
       })
-        ? alert("producto eliminado")
-        : removed;
+      ? alert("producto eliminado")
+      : removed;
     } catch (error) {
       return alert(error.removed.data.error);
     }
@@ -54,8 +55,10 @@ export const deletProduct = (name) => {
 export const saleProduct = (payload) => {
   return async function (dispatch) {
     try {
+      
       const response = await axios.get(`http://localhost:3001/sale`, payload);
       const data = response.data;
+      console.log(data);
       return dispatch({
         type: SALE_PRODUCTS,
         payload: data,
@@ -76,17 +79,17 @@ export const foundProduct = (name) => {
       data.length === 0
         ? "producto no encontrado"
         : dispatch({
-            type: FOUND_PRODUCTS,
-            payload: data,
-          });
-    } catch (error) {
-      console.log(error);
+          type: FOUND_PRODUCTS,
+          payload: data,
+        });
+      } catch (error) {
+        console.log(error);
     }
   };
 };
 
 export const newStock = (payload) =>{
-
+  
   console.log(payload);
   return async (dispatch)=>{
     
@@ -100,7 +103,7 @@ export const newStock = (payload) =>{
     } catch (error) {
       console.log({message :error.message });
     }
-}
+  }
 }
 
 export const addSale = (payload) => {
