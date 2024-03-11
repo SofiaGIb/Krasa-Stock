@@ -1,7 +1,6 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
 import SearchBar from "../searchBar/Searchbar";
 import "./productos.css";
@@ -17,6 +16,7 @@ export const Product = () => {
 
   const handleDelete = (name) => {
     dispatch(deletProduct(name));
+    dispatch(allProduct());
   };
 
   return (
