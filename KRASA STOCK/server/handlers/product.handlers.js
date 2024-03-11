@@ -26,7 +26,7 @@ const newProduct = async (req,res) => {
  try {
   
    const {name,description,amount} = req.body;
-   if(!name || !description || !amount) return res.status(400).json({
+   if(!name || !amount) return res.status(400).json({
     message:"lOS CAMPOS NAME,DESCRIPTION Y AMOUNT DEBEN SER COMPLETADOS "
    })
 
