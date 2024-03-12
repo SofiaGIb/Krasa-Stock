@@ -10,7 +10,6 @@ import Swal from 'sweetalert2'
 function Ventas() {
   const dispatch = useDispatch();
   const sold = useSelector((state) => state.sales);
-
   useEffect(() => {
     dispatch(saleProduct());
   }, [dispatch]);
@@ -23,9 +22,8 @@ function Ventas() {
           <li  className="listv"key={sale.id}>
             <h2 className="titulo2">{sale.productName}</h2>
             <h4 > se vendieron :{sale.total}</h4>
-            <h4 > el : {sale.date}</h4>
-            
-            
+            <h4 > el : {sale.date}</h4>            
+            <h4>El: {new Intl.DateTimeFormat('es-ES', { dateStyle: 'full' }).format(new Date(sale.date))}</h4>            
           </li>
         ))}
       </ul>
