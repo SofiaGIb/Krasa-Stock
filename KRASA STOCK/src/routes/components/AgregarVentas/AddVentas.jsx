@@ -25,7 +25,7 @@ export const AddVentas = () => {
   };
 
   return (
-    <div className="cajav">
+    <div className="cajaf">
       <form onSubmit={handleSubmit} className="formv">
         <input
           type="text"

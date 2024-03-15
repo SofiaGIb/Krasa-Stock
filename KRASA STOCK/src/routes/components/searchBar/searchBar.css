@@ -1,9 +1,4 @@
-.cajad{
-    align-content: center;
-    margin-top: 15px;
-    margin-bottom: 10px;  
-    margin-right: 20px;
-}
+
 .cajad>input{
     
     margin: 10px;
@@ -18,8 +13,6 @@
     transition: transform 0.3s ease; 
     height: 20px;
     align-content: center;
-
-    
 }
 .cajad > input:focus {
     transform: scale(1.2); /* Escalamos el input al 110% cuando está enfocado */

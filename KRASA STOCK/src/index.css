@@ -3,14 +3,8 @@
 
 
 }
-.active{
 
-  background-color: coral;
-}
 
-.li a :hover:not(.active){
-  background-color: blueviolet;
-}
 
 .silkscreen-regular {
   font-family: "Silkscreen", sans-serif;
@@ -27,13 +21,11 @@
 
 body {
   font-family: "Silkscreen", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: bold;
-  color: rgb(131, 20, 107);
 
 
-background-color: rgba(167, 138, 175, 0.716);  
-}
+background-color: #eed7ab}
 
 
 

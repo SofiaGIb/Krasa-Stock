@@ -1,47 +1,42 @@
-.cajaf{
-    background-color: #efbcce;
-    border-radius: 15px;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-   width: 60%;
-   right:80%;
-   padding:  20px;
-   margin-top: 24vh;
-   
-
-
+.cajaf {
+  border-radius: 15px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  right: 90%;
+  padding: 20px;
+  margin-top: 24vh;
 }
-.formv{
-    padding: 20px;
-display: flex;
-border:5px solid #664c58;
-
-flex-direction: column;
+.formv {
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  border: 5px solid #727a46;
+  background-color: #eddde0;
+  flex-direction: column;
 }
 
-
-.formv>input{
-    padding: 20px;
-    font-size: large;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    background-color: rgb(248,223,247);
+.formv > input {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgb(248, 223, 247);
+  font-size: larger;
 }
 
-
-.buttonv{ 
-border-radius: 10px;
-padding-top: 10px;
-margin: 20px,20px,10px,10px;
-background-color: blueviolet;
-margin-top: 15px;}
-
-
-.buttonv:hover{
-    background-color:rgb(230,142,133) ;
+.buttonv {
+  width: auto;
+  border-radius: 15px;
+  padding: 18px 10px;
+  margin: 15px 85px;
+  background-color: rgb(219, 199, 237);
+  font-size: 18px;
+  color: rgb(27, 29, 31);
 }
- .buttonv:active{
-    background-color: burlywood;
- }
+
+.buttonv:hover {
+    background-color: rgb(173, 177, 231);
+}
+.buttonv:active {
+    background-color: rgb(244, 164, 232);
+}

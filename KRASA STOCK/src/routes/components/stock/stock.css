@@ -1,0 +1,59 @@
+.cajast{
+    border-radius: 15px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+   width: 70%;
+   right:90%;
+   padding:  20px;
+   margin-top: 18vh;
+}
+
+.forms{
+    padding:  20px 20px 20px 20px ;
+    display: flex;
+    border: 5px solid #727a46;
+    background-color:#eddde0;
+    flex-direction: column;
+
+}
+
+.forms>input{
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 20px ;
+    background-color: rgb(248, 223, 247);
+    font-size:larger;
+}
+.forms>input:focus{
+    font-size: 30px;
+    font-weight: bold;
+    transform: scale(1.0);
+    transition: transform 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.titless{
+    background-color: aqua;
+    text-align: center;
+margin: 0;
+padding: 20px 0;
+color: #2b2b2c;
+}
+
+.bottons{
+
+    width: auto;
+   border-radius: 15px;
+    padding: 18px 10px;
+    margin: 15px 85px;
+    background-color: rgb(219, 199, 237);
+    font-size:  18px;
+    color: rgb(27, 29, 31);
+  
+  }
+  .bottons:hover{
+      background-color: rgb(173, 177, 231);
+  }
+  .bottons:active{
+      background-color: rgb(244, 164, 232);
+  }

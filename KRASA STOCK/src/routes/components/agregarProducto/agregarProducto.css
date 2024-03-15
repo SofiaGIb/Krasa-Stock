@@ -1,20 +1,19 @@
 .caja{
- background-color: #efbcce;
  border-radius: 15px;
  align-content: center;
  margin-left: auto;
  margin-right: auto;
-width: 60%;
-right:80%;
+width: 70%;
+right:90%;
 padding:  20px;
-margin-top: 24vh;
+margin-top: 18vh;
 
 }
 .formp{
     padding:  20px 20px 20px 20px ;
     display: flex;
-    border: 5px solid #664c58;
-    background-color:#f4aeba;
+    border: 5px solid #727a46;
+    background-color:#eddde0;
     flex-direction: column;
 }
 .formp>input{
@@ -77,14 +76,14 @@ color: #2b2b2c;
  border-radius: 15px;
   padding: 18px 10px;
   margin: 15px 85px;
-  background-color: rgb(167, 111, 219);
+  background-color: rgb(219, 199, 237);
   font-size:  18px;
-  color: aliceblue;
+  color: rgb(27, 29, 31);
 
 }
 .bottonc:hover{
-    background-color: rgb(230, 142, 133);
+    background-color: rgb(173, 177, 231);
 }
 .bottonc:active{
-    background-color: burlywood;
+    background-color: rgb(244, 164, 232);
 }
