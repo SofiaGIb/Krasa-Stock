@@ -1,14 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { newStock } from "../../../Redux/actions/actionsFunction/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./stock.css";
+import SearchBar from "../searchBar/Searchbar";
 import * as Yup from "yup";
 
 export default function Stock() {
- const products = useSelector((state)=>state.products)
-
-
   const [errors, setErrors] = useState({});
   try {
     const schema = Yup.object().shape({
@@ -18,29 +15,28 @@ export default function Stock() {
     });
   } catch (validationErrors) {
     const errors = {};
-    validationErrors.innner.forEach((error) => {
-      error[error.path] = error.message;
+    validationErrors.inner.forEach((error) => {
+      errors[error.path] = error.message;
     });
     setErrors(errors);
   }
 
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.allProducts);
-  console.log(product);
+  const products = useSelector((state) => state.allProducts);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const newAmount = { name, amount: parseInt(amount) };
+    const newAmount = { name: name, amount: parseInt(amount) };
 
     await dispatch(newStock(newAmount));
   };
 
   return (
     <div>
-      <h1 className="titless">ACTUALIZAREMOS EL STOCK</h1>
+      <h2 className="titless">ACTUALIZAREMOS EL STOCK</h2>
 
       <div className="cajast">
         <form className="forms" onSubmit={handleSubmit}>
@@ -50,10 +46,6 @@ export default function Stock() {
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-          <select name="p" id="">
-            <option>seleccione producto</option>
-            {product.map((products)=>(<option key={products.id} value={products.id}>{products.name}</option>))}
-            </select>
           <input
             type="number"
             placeholder="nuevo stock"
@@ -61,10 +53,10 @@ export default function Stock() {
             onChange={(event) => {
               setAmount(event.target.value);
             }}
-          />{" "}
+          />
           {errors.amount && <div>{errors.amount}</div>}
           <button type="submit" className="bottons">
-            CREAR
+            AGREGAR
           </button>
         </form>
       </div>

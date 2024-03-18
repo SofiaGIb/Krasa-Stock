@@ -25,7 +25,6 @@ export const allProduct = () => {
 };
 export const postProduct = (payload) => {
   return async function (dispatch) {
-    console.log(dispatch);
     try {
       const response = await axios.post("http://localhost:3001/products", payload);
       return dispatch({
@@ -89,8 +88,6 @@ export const foundProduct = (name) => {
 };
 
 export const newStock = (payload) =>{
-  
-  console.log(payload);
   return async (dispatch)=>{
     
     try {

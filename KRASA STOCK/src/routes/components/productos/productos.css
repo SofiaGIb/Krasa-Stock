@@ -1,91 +1,90 @@
-.color{
-    list-style-type:none;
-    padding: 0;
-    background-color:#eddde0;
-    gap: 50px;
-    border-radius: 15px;
-    border: 5px solid #727a46;}
+.color {
+  list-style-type: none;
+  padding: 0;
+  background-color: #eddde0;
+  gap: 50px;
+  border-radius: 15px;
+  border: 5px solid #727a46;
+}
 
-.cajap{
-    max-height:700px;
-    overflow-y: auto;
-    padding: 25px;
-    
- 
-
+.cajap {
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 25px;
+  list-style-type: none;
+  -ms-overflow-style: none; /* Oculta la barra de desplazamiento en IE y Edge */
+  scrollbar-width: none;
+}
+.cajap::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento en Chrome y Safari */
 }
 .red {
-    animation:   pulse 3s infinite alternate;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      background-color: rgb(244, 164, 232);
-    }
-    50% {
-      transform: scale(1.03);
-      background-color: rgb(241, 101, 101); 
-    }
-  }
-  
-  
- .h2 {
-    text-align: center;
-    padding: 15px;;
- }
- .list{
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
     background-color: rgb(244, 164, 232);
-    border: 3px solid #efe8e8;
-    align-content: center;
-    padding: 10px ;
-    border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    position: relative
-}
-.material{
-    color: #e82424;
-    height: 40px;
-    position: absolute; /* Establece la posición absoluta */
-    top: 60%; /* Coloca el botón en la mitad vertical del elemento padre */
-    right: 30px; /* Coloca el botón 10px del borde derecho del elemento padre */
-    transform: translateY(-50%) scale(1.2); /* Centra verticalmente el botón */
-    background-color: rgb(234, 228, 221); /* Fondo transparente */
-    cursor: pointer; 
-    border-radius: 5px;
-    border: none;
-    
-
-    
+  }
+  50% {
+    transform: scale(1.03);
+    background-color: rgb(241, 101, 101);
+  }
 }
 
-.list >p{
-    margin: 1px;
+.h2 {
+  text-align: center;
+  padding: 15px;
 }
-.list p:last-child{
-    text-align: center;
-    color: rgb(50, 50, 161);
-    font-size: 25px;
-    font-weight: bold;
-    
+.list {
+  background-color: rgb(244, 164, 232);
+  border: 3px solid #efe8e8;
+  align-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  position: relative;
 }
-.list p:first-child{
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-    
+.material {
+  color: #e82424;
+  height: 40px;
+  position: absolute; /* Establece la posición absoluta */
+  top: 60%; /* Coloca el botón en la mitad vertical del elemento padre */
+  right: 30px; /* Coloca el botón 10px del borde derecho del elemento padre */
+  transform: translateY(-50%) scale(1.2); /* Centra verticalmente el botón */
+  background-color: rgb(234, 228, 221); /* Fondo transparente */
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
 }
 
-.contenedorp{
-    border-radius: 15px;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-   width: 70%;
-   right:90%;
-   padding:  20px;
-   margin-top: 24vh;
+.list > p {
+  margin: 1px;
+}
+.list p:last-child {
+  text-align: center;
+  color: rgb(50, 50, 161);
+  font-size: 25px;
+  font-weight: bold;
+}
+.list p:first-child {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+}
+
+.contenedorp {
+  border-radius: 15px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  right: 90%;
+  padding: 20px;
+  margin-top: 24vh;
 }

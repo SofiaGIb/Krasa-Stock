@@ -7,10 +7,11 @@
    right:60%;
    padding:  10px;
    margin-top: 18vh;
-    
+   
 }
 
 .listv{
+    list-style-type:none;
     background-color: rgb(228, 173, 220);
     border-style:groove #efe8e8;
     align-content: center;
