@@ -46,7 +46,7 @@ const newAmount = async (req,res)=>{
     const {name,amount} = req.body;
     if (!name || !amount ) return res.status(400).json({message:"Los campos son requeridos"});
     const newStock = await stockChange(name,amount)
-    res.status(200).json({message:'El stock fue modificado el nuevo stock es de'})
+    res.status(200).json({message:'El stock fue modificado el nuevo stock es de',de:newStock})
   } catch (error) {
     console.log({error});
     res.status(500).json({ error: error.message });
