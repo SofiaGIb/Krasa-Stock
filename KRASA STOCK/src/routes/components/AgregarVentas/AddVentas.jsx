@@ -26,6 +26,7 @@ export const AddVentas = () => {
 
   return (
     <div className="cajaf">
+      <h1 className="titlev">INGRESAR VENTAS REALIZADAS </h1>
       <form onSubmit={handleSubmit} className="formv">
         <input
           type="text"

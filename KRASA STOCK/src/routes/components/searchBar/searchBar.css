@@ -14,11 +14,9 @@
     height: 20px;
     align-content: center;
 }
-.cajad > input:focus {
-    transform: scale(1.2); /* Escalamos el input al 110% cuando está enfocado */
-}
+
 input:hover{
-    transform: scale(1.1); /* Escalamos el input al 110% cuando está enfocado */
+    transform: scale(1.02); /* Escalamos el input al 110% cuando está enfocado */
 
     background-color: rgb(194, 224, 158);
 }

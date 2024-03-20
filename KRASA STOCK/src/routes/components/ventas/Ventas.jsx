@@ -18,9 +18,9 @@ function Ventas() {
         {sold.map((sale) => (
           <li className="listv" key={sale.id}>
             <h2 className="titulo2">{sale.productName}</h2>
-            <h4> se vendieron :{sale.total}</h4>
-            <h4>
-              El:{" "}
+            <h4 className="h4"> se vendieron :{sale.total}</h4>
+            <h4 className="fecha">
+              {" "}
               {new Intl.DateTimeFormat("es-ES", { dateStyle: "full" }).format(new Date(sale.date))}
             </h4>
           </li>

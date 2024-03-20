@@ -4,7 +4,7 @@ import Logueo from "./routes/components/Logueo";
 import Stock from "./routes/components/stock/Stock";
 import Ventas from "./routes/components/ventas/Ventas";
 import { Routes, Route, Navigate } from "react-router-dom";
-import {AddProduct } from "./routes/components/agregarProducto/AgregarProductos";
+import { AddProduct } from "./routes/components/agregarProducto/AddProduct";
 import Product from "./routes/components/productos/Productos";
 import AddVentas from "./routes/components/agregarVentas/addVentas";
 function App() {

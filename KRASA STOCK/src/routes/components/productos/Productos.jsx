@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
 import SearchBar from "../searchBar/Searchbar";
-import { Link } from "react-router-dom";
-import Stock from "../stock/Stock";
 import "./productos.css";
 
 export const Product = () => {
@@ -24,11 +22,11 @@ export const Product = () => {
   const handleModifyStock = (name) => {
     setSelectedProduct(name);
   };
+  <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
   return (
     <div className="contenedorp">
-      <h2 className="h2">LISTADO DE PRODUCTOS</h2>
 
-      <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
+      <h2 className="h2">LISTA DE PRODUCTOS</h2>
       <div className="cajap">
         <ul className="color">
           {products
