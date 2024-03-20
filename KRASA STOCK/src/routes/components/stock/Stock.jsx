@@ -21,7 +21,7 @@ export default function Stock() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await schema.validate({ name, amount }, { ebortEarly: false });
+      await schema.validate({ name, amount }, { abortEarly: false });
       const newAmount = { name: name, amount: parseInt(amount) };
 
       await dispatch(newStock(newAmount));
@@ -32,7 +32,7 @@ export default function Stock() {
         errors[error.path] = error.message;
       });
       setErrors(errors);
-    }
+    } }
 
     return (
       <div className="cajast">
@@ -64,4 +64,4 @@ export default function Stock() {
       </div>
     );
   };
-}
+

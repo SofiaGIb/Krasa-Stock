@@ -18,7 +18,7 @@ export const AddProduct = () => {
   const schema = Yup.object().shape({
     name: Yup.string().required("El nombre es requerido"),
     amount: Yup.number()
-      .required("La cantidad es requerida")
+ .required("La cantidad es requerida")
       .positive("La cantidad debe ser positiva"),
   });
 
@@ -27,7 +27,7 @@ export const AddProduct = () => {
 
     try {
       await schema.validate({ name, amount }, { abortEarly: false });
-      const newProduct = { name, description, amount };
+      const newProduct = { name, amount };
       await dispatch(postProduct(newProduct));
       setIsProductCreated(true);
       setCreatedProduct(newProduct);
