@@ -31,7 +31,6 @@ const newProduct = async (req,res) => {
    })
 
    const nuevoProducto = await createProduct(name,description,amount)
-   console.log(nuevoProducto );
    res.status(200).json({message:'PRODUCTO CREADO CON EXITO' });
   } catch (error) {
     console.log({error});
@@ -59,7 +58,6 @@ const productoDelete = async (req, res) => {
     
     const { name } = req.params;
     console.log("Nombre del producto a eliminar:", name)
-    console.log(name);
     res.status(200).json(await deletProduct(name));
   } catch (error) {
     console.log(error);
