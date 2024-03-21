@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 
 export const AddVentas = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.allProducts);
-  const sale = useSelector((state) => state.sales.sales);
+  const products = useSelector((state) => state.products);
+  const sale = useSelector((state) => state.sales);
   const [productName, setProductName] = useState("");
   const [total, setTotal] = useState(0);
   const [errors, setErrors] = useState({});

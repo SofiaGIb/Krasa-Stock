@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saleProduct } from "../../../Redux/actions/actionsFunction/actions";
 import "./ventas.css";
-import Swal from "sweetalert2";
 
 function Ventas() {
-  const dispatch = useDispatch();
   const sold = useSelector((state) => state.sales);
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(saleProduct());
   }, [dispatch]);
@@ -15,16 +14,20 @@ function Ventas() {
     <div className="cajav">
       <h1 className="titulop">lista de productos vendidos </h1>
       <ul className="cajapr">
-        {sold.map((sale) => (
-          <li className="listv" key={sale.id}>
-            <h2 className="titulo2">{sale.productName}</h2>
-            <h4 className="h4"> se vendieron :{sale.total}</h4>
-            <h4 className="fecha">
-              {" "}
-              {new Intl.DateTimeFormat("es-ES", { dateStyle: "full" }).format(new Date(sale.date))}
-            </h4>
-          </li>
-        ))}
+      { sold
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .map((sale) => (
+  <li className="listv" key={sale.id}>
+    <h2 className="titulo2">{sale.productName}</h2>
+    <h4 className="h4"> se vendieron :{sale.total}</h4>
+    {sale.date && (
+      <h4 className="fecha">
+        {" "}
+        {new Intl.DateTimeFormat("es-ES", { dateStyle: "full" }).format(new Date(sale.date))}
+      </h4>
+    )}
+  </li>
+))}
       </ul>
     </div>
   );

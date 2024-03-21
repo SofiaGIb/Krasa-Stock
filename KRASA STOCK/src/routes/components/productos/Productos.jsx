@@ -6,10 +6,7 @@ import "./productos.css";
 
 export const Product = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.allProducts);
-  useEffect(() => {
-    dispatch(allProduct());
-  }, []);
+  const products = useSelector((state) => state.products);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -22,9 +19,9 @@ export const Product = () => {
   const handleModifyStock = (name) => {
     setSelectedProduct(name);
   };
-  <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
   return (
     <div className="contenedorp">
+    <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
 
       <h2 className="h2">LISTA DE PRODUCTOS</h2>
       <div className="cajap">

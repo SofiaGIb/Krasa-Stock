@@ -9,6 +9,7 @@ NEW_AMOUNT} from "../actions/action-types";
 const initialState = {
   allProducts: [],
   products: [],
+  allSales :[],
   sales: [],
   foundProducts:[]
 };
@@ -19,21 +20,22 @@ const Reducer = (state = initialState, action) => {
         ...state,
         allProducts: action.payload,
         products:action.payload
-        // [...state.allProducts, action.payload],
       };
     case ADD_PRODUCT:
       return {
         ...state,
+       products:action.payload
       };
     case SALE_PRODUCTS:
       return {
         ...state,
-        sales: action.payload
+
+        sales:action.payload
       };
 case ADD_SALE:
   return {
     ...state,
-    sales:action.payload
+    sales: [...state.sales, action.payload],
 
   }
 

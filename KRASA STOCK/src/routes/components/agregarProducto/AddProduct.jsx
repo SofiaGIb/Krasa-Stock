@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { postProduct } from "../../../Redux/actions/actionsFunction/actions";
+import { postProduct, } from "../../../Redux/actions/actionsFunction/actions";
 import "./agregarProducto.css";
 import * as Yup from "yup";
 
