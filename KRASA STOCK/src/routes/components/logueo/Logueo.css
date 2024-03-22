@@ -1,0 +1,25 @@
+.h1{
+    color: brown;
+    align-items: center;
+    margin-top: 11%;
+    padding: 20px;
+    background-color: rgb(224, 251, 251);
+}
+.orient > ul{
+    font-size: 20px;
+    color: rgb(49, 19, 77);
+}
+.orient  ul h4{
+    padding: 0;
+    color: rgb(220, 137, 29);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.orient {
+    padding-bottom: 0px;
+    height: auto; 
+    border-style: dotted;
+    padding: 5px;
+    overflow: auto;
+  }

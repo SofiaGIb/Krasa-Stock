@@ -18,7 +18,7 @@ const Reducer = (state = initialState, action) => {
     case ALL_PRODUCT:
       return {
         ...state,
-        allProducts: action.payload,
+
         products:action.payload
       };
     case ADD_PRODUCT:

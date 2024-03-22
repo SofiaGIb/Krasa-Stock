@@ -17,15 +17,43 @@
   font-weight: 700;
   font-style: normal;
 }
-
-
-body {
+body, html {
   font-family: "Silkscreen", sans-serif;
   font-weight: 700;
   font-style: bold;
 
 
-background-color: #eed7ab}
+background-color: #eed7ab ;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Evita que se muestren barras de desplazamiento */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  flex: 0 0 auto; /* No se expande, altura determinada por su contenido */
+  background-color: #f0a9b4;
+  padding: 10px;
+}
+
+.main {
+  flex: 1 1 auto; /* Se expande para ocupar el espacio restante */
+  overflow: auto; /* Permite el desplazamiento si el contenido excede la altura */
+  padding: 10px;
+}
+
+.footer {
+  flex: 0 0 auto; /* No se expande, altura determinada por su contenido */
+  background-color: #f0a9b4;
+  padding: 10px;
+}
+
 
 
 

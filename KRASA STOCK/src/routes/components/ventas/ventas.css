@@ -1,56 +1,99 @@
-.cajav{    
+
+.cajav {
     border-radius: 15px;
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-   right:60%;
-   padding:  10px;
-   margin-top: 18vh;
-   
+    right: 80%;
+    padding: 10px;
+    margin-top: 20vh;
 }
-
+.cajav::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en Chrome, Safari, Opera */
+}
+.color {
+    position: sticky; /* Hace que .color se quede fijo dentro de .cajapr */
+    top: 0; /* Fija la parte superior de .color al principio de .cajapr */
+    max-height: 100%; /* Hace que .color ocupe toda la altura disponible en .cajapr */
+    overflow-y: auto; /* Permite el desplazamiento vertical en .color si su contenido excede la altura */
+}
 .listv{
-    border-style: double ;
-    list-style-type:none;
+    border-style: double;
+    list-style-type: none;
     background-color: rgb(242, 220, 239);
     align-content: center;
-    padding: 10px ;
+    padding: 10px;
     border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 10px;
-    position: relative
+    position: relative;
 }
-.titulo2{
+
+.titulo2 {
     color: rgb(60, 60, 73);
-    
 }
-.titulop{
+
+.titulop {
     text-align: center;
     padding: 15px;
     color: black;
     font-size: bold;
-
-}
-.cajapr{
-    border-radius: 15px;
-  margin-top: 20px;
-    max-height:700px;
-    overflow:auto;
-    padding: 25px;
-    border: 5px solid #727a46;
-    background-color:#f0a9b4;
-
-
-}
-.cajapr::-webkit-scrollbar {
-    width: 0; /* Oculta la barra de desplazamiento en navegadores webkit (Chrome, Safari, etc.) */
 }
 
-.fecha{
-position: absolute;
-bottom: 10px;
-right: 25px;
-margin: 0;
+.cajapr {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+        position: relative; /* Cambiado a relativo para hacer que .color sea relativo a este contenedor */
+        border-radius: 15px;
+        margin-top: 20px;
+        max-height: 700px;
+        overflow: auto;
+        padding: 25px;
+        border: 5px solid #727a46;
+        background-color: #f0a9b4;
+    }
 
+
+.fecha {
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    margin: 0;
+}
+
+/* Media queries para ajustes responsivos */
+@media (max-width: 768px) {
+    .cajap{
+        right: auto; /* Reinicia la propiedad right para centrar en pantallas más pequeñas */
+        width: 80%; /* Reducir el ancho en pantallas más pequeñas */
+    }
+
+
+    .listv {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cajav {
+        padding: 5px; /* Reduce el padding en pantallas aún más pequeñas */
+    }
+
+    .listv {
+        padding: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .titulop {
+        font-size: 16px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+
+    .fecha {
+        bottom: 5px;
+        right: 15px;
+    }
 }

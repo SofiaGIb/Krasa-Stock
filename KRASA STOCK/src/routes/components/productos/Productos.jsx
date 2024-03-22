@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
 import SearchBar from "../searchBar/Searchbar";
 import "./productos.css";
 
-export const Product = () => {
+function Product ()  {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -16,33 +15,28 @@ export const Product = () => {
     dispatch(allProduct());
   };
 
-  const handleModifyStock = (name) => {
-    setSelectedProduct(name);
-  };
   return (
-    <div className="contenedorp">
-    <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
-
-      <h2 className="h2">LISTA DE PRODUCTOS</h2>
-      <div className="cajap">
+    <div className="cajap">
+          <SearchBar></SearchBar>
+      <h2 className="titulop">LISTA DE PRODUCTOS</h2>
+     
         <ul className="color">
           {products
             .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((product) => (
-              <li className={`list ${product.amount < 10 ? "red" : ""}`} key={product.id}>
-                <p> {product.name}</p>
-                <p>description: {product.description}</p>
+              <li className={`listp ${product.amount < 10 ? "red" : ""}`} key={product.id}>
+                <> {product.name}</>
+                <>description: {product.description}</>
                 <button className="material" onClick={() => handleDelete(product.name)}>
-                  {" "}
                   <span className="material-symbols-outlined">delete</span>
                 </button>
-                <p>Cantidad : {product.amount}</p>
+                <>Cantidad : {product.amount}</>
               </li>
             ))}
         </ul>
       </div>
-    </div>
+  
   );
 };
 
-export default Product;
+export default Product

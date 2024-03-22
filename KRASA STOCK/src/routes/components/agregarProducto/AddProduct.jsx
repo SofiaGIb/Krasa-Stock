@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { postProduct, } from "../../../Redux/actions/actionsFunction/actions";
+import { postProduct,allProduct } from "../../../Redux/actions/actionsFunction/actions";
 import "./agregarProducto.css";
 import * as Yup from "yup";
 
@@ -36,6 +36,7 @@ export const AddProduct = () => {
       setDescription("");
       setAmount(0);
       setErrors({});
+      dispatch(allProduct());
     } catch (validationErrors) {
       const errors = {};
       validationErrors.inner.forEach((error) => {
@@ -87,7 +88,7 @@ export const AddProduct = () => {
           <ul>
             <li>
               <h3>
-                {createdProduct.name},{createdProduct.description},
+                {createdProduct.name},{createdProduct.description}
                 {createdProduct.amount}
               </h3>
             </li>
