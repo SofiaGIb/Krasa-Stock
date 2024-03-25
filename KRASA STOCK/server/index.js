@@ -1,4 +1,4 @@
-const app = require ("./app.js")
+const app = require ("./app")
 const port = 3001;
 
 app.get("/",(req,res)=>{res.send("hola mundo")})
