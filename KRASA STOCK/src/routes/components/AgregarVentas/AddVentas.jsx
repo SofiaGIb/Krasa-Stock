@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { addSale } from "../../../Redux/actions/actionsFunction/actions";
 import { useDispatch, useSelector } from "react-redux";

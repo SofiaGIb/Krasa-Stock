@@ -9,13 +9,11 @@
     margin-top: 20vh;
 }
 .cajav::-webkit-scrollbar {
-    display: none; /* Oculta la barra de desplazamiento en Chrome, Safari, Opera */
-}
-.color {
-    position: sticky; /* Hace que .color se quede fijo dentro de .cajapr */
-    top: 0; /* Fija la parte superior de .color al principio de .cajapr */
-    max-height: 100%; /* Hace que .color ocupe toda la altura disponible en .cajapr */
-    overflow-y: auto; /* Permite el desplazamiento vertical en .color si su contenido excede la altura */
+    display: none; 
+    position: sticky; 
+    top: 0; 
+    max-height: 100%; 
+    overflow-y: auto; 
 }
 .listv{
     border-style: double;
@@ -62,11 +60,10 @@
     margin: 0;
 }
 
-/* Media queries para ajustes responsivos */
 @media (max-width: 768px) {
     .cajap{
-        right: auto; /* Reinicia la propiedad right para centrar en pantallas más pequeñas */
-        width: 80%; /* Reducir el ancho en pantallas más pequeñas */
+        right: auto; 
+        width: 80%;
     }
 
 
@@ -78,7 +75,7 @@
 
 @media (max-width: 576px) {
     .cajav {
-        padding: 5px; /* Reduce el padding en pantallas aún más pequeñas */
+        padding: 5px;
     }
 
     .listv {
@@ -88,8 +85,7 @@
     }
 
     .titulop {
-        font-size: 16px; /* Reduce el tamaño del texto en pantallas pequeñas */
-    }
+        font-size: 16px; }
 
 
     .fecha {

@@ -1,24 +1,18 @@
-.cajad{position: fixed;}
 .cajad>input{
     
-    margin: 10px;
-    align-content: center;
-    margin-left: 240px;
-    padding-inline: 150px;
-    position: relative;
-    padding: 25px;
+    padding: 28px;
     width: 800px;
     border-radius: 15px;
     border:7px groove  #de8787;
     transition: transform 0.3s ease; 
-    height: 20px;
-    align-content: center;
+    height: 40px; 
+
 }
 
 input:hover{
     transform: scale(1.02); /* Escalamos el input al 110% cuando está enfocado */
 
-    background-color: rgb(194, 224, 158);
+    background-color: rgb(226, 230, 219);
 }
 
 

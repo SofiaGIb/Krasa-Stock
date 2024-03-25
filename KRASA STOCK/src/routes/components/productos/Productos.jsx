@@ -4,9 +4,10 @@ import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction
 import SearchBar from "../searchBar/Searchbar";
 import "./productos.css";
 
-function Product ()  {
+function Product() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
+  console.log(products);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -17,26 +18,27 @@ function Product ()  {
 
   return (
     <div className="cajap">
-          <SearchBar></SearchBar>
-      <h2 className="titulop">LISTA DE PRODUCTOS</h2>
-     
-        <ul className="color">
-          {products
-            .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map((product) => (
-              <li className={`listp ${product.amount < 10 ? "red" : ""}`} key={product.id}>
-                <> {product.name}</>
-                <>description: {product.description}</>
-                <button className="material" onClick={() => handleDelete(product.name)}>
-                  <span className="material-symbols-outlined">delete</span>
-                </button>
-                <>Cantidad : {product.amount}</>
-              </li>
-            ))}
-        </ul>
+      <h2 className="titulo2">LISTA DE PRODUCTOS</h2>
+      <div className="search">
+        <SearchBar></SearchBar>
       </div>
-  
-  );
-};
 
-export default Product
+      <ul className="color">
+        {products
+          .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
+          .map((product) => (
+            <li className={`listp ${product.amount < 10 ? "red" : ""}`} key={product.id}>
+              <ul className="name"> {product.name}</ul>
+              <ul className="description">descripcion: {product.description}</ul>
+              <button className="material" onClick={() => handleDelete(product.name)}>
+                <span className="material-symbols-outlined">delete</span>
+              </button>
+              <ul className="cantidad">Cantidad : {product.amount}</ul>
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Product;

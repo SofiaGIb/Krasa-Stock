@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saleProduct } from "../../../Redux/actions/actionsFunction/actions";
@@ -18,7 +19,7 @@ function Ventas() {
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .map((sale) => (
   <li className="listv" key={sale.id}>
-    <h2 className="titulo2">{sale.productName}</h2>
+    <h2 className="titulon">{sale.productName}</h2>
     <h4 className="h4"> se vendieron :{sale.total}</h4>
     {sale.date && (
       <h4 className="fecha">
