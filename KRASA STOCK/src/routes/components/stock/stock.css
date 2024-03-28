@@ -1,7 +1,9 @@
 .tittleS {
     text-align: center;
-   margin-top: 185px;
+   margin-top: 85px;
     margin-bottom: 55px;
+    text-decoration: dotted;
+    color: rgb(60, 60, 73);
  }
 .cajast{
     border-radius: 15px;

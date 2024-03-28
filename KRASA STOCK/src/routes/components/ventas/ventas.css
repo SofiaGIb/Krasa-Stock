@@ -4,9 +4,12 @@
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-    right: 80%;
-    padding: 10px;
-    margin-top: 20vh;
+    padding: 0px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: 90vh; /* Altura fija del contenedor principal */
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    position: relative;
 }
 .cajav::-webkit-scrollbar {
     display: none; 
@@ -40,17 +43,20 @@
 }
 
 .cajapr {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; 
-        position: relative; /* Cambiado a relativo para hacer que .color sea relativo a este contenedor */
-        border-radius: 15px;
-        margin-top: 20px;
-        max-height: 700px;
-        overflow: auto;
-        padding: 25px;
-        border: 5px solid #727a46;
-        background-color: #f0a9b4;
-    }
+    margin-top: 130px;
+    margin-left: 15px;
+    margin-right: 15px ;
+    position: absolute; /* Posición absoluta solo para la lista de productos puedo modificar */
+    top: 0; /* Alinea la lista de productos al principio del contenedor */
+    left: 0; /* Alinea la lista de productos a la izquierda del contenedor puedo modificar*/
+    right: 0; /* Alinea la lista de productos a la derecha del contenedor */
+    bottom: 0; /* Alinea la lista de productos al final del contenedor */
+    overflow-y: auto; /* Permite el desplazamiento vertical solo cuando sea necesario */
+    padding: 5px; /* Espaciado interior */
+    border: 5px solid #727a46;
+    border-radius: 25px;
+    background-color: #f0a9b4;}
+      
 
 
 .fecha {

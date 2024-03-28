@@ -11,14 +11,13 @@ import axios from "axios";
 export const allProduct = () => {
   return async function (dispatch) {
     try {
-      const json = await axios.get("http://localhost:3001/products");
+      const json = await axios.get("products");
       const data = json.data;
       return dispatch({
         type: ALL_PRODUCT,
         payload: data,
       });
     } catch (error) {
-      console.log(error);
       alert(error.response.data.error);
     }
   };
@@ -26,7 +25,7 @@ export const allProduct = () => {
 export const postProduct = (payload) => {
   return async function (dispatch) {
     try {
-      const response = await axios.post("http://localhost:3001/products", payload);
+      const response = await axios.post("/products", payload);
       return dispatch({
         type: ADD_PRODUCT,
         payload: response.data,
@@ -39,13 +38,12 @@ export const postProduct = (payload) => {
 export const deletProduct = (name) => {
   return async function (dispatch) {
     try {
-      const removed = await axios.delete(`http://localhost:3001/products/${name}`);
+      const removed = await axios.delete(`/products/${name}`);
       return dispatch({
         type: DELETE_PRODUCT,
         payload: removed.data,
       })
-      ? alert("producto eliminado")
-      : removed;
+    
     } catch (error) {
       return alert(error.removed.data.error);
     }
@@ -55,8 +53,7 @@ export const saleProduct = () => {
   return async function (dispatch) {
     try {
       
-      const response = await axios.get(`http://localhost:3001/sale`);
-      console.log(response);
+      const response = await axios.get(`/sale`);
       const data = response.data;
       return dispatch({
         type: SALE_PRODUCTS,
@@ -72,7 +69,7 @@ export const saleProduct = () => {
 export const foundProduct = (name) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:3001/products/${name}`);
+      const response = await axios.get(`/products/${name}`);
       const data = response.data;
       console.log(data);
       data.length === 0
@@ -89,9 +86,10 @@ export const foundProduct = (name) => {
 
 export const newStock = (payload) =>{
   return async (dispatch)=>{
+    console.log(payload);
     
     try {
-      const response= await axios.patch(`  http://localhost:3001/products`,payload);
+      const response= await axios.patch(`/products`,payload);
       const data = response.data;
       dispatch({
         type:NEW_AMOUNT,
@@ -106,7 +104,7 @@ export const newStock = (payload) =>{
 export const addSale = (payload) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post("http://localhost:3001/sale", payload);
+      const response = await axios.post("/sale", payload);
       const data = response.data;
       dispatch({
         type: ADD_SALE,

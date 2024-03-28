@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { addSale } from "../../../Redux/actions/actionsFunction/actions";
+import { addSale,allProduct } from "../../../Redux/actions/actionsFunction/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddVentas.css";
 import * as Yup from "yup";
@@ -26,7 +26,7 @@ export const AddVentas = () => {
 
     try {
       await schema.validate({ productName, total }, { abortEarly: false });
-      const productExists = products.some((product) => product.name === productName);
+      const productExists = products.some((product) => product.name.toLowerCase() === productName.toLowerCase());
       if (!productExists) {
         return Swal.fire({
           position: "center",
@@ -37,7 +37,10 @@ export const AddVentas = () => {
         });
       }
       const newSale = { productName, total:parseInt(total) };
+      console.log(newSale);
       await dispatch(addSale(newSale));
+      dispatch(allProduct());
+
       Swal.fire({
         position: "center",
         icon: "success",
@@ -57,7 +60,7 @@ export const AddVentas = () => {
 
   return (
     <div className="cajaf">
-      <h1 className="titlev">INGRESAR VENTAS REALIZADAS </h1>
+      <h1 className="titv">INGRESAR VENTAS REALIZADAS </h1>
       <form onSubmit={handleSubmit} className="formv">
         <input
           type="text"

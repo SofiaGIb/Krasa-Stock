@@ -1,15 +1,7 @@
 import React from "react";
-
-import { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { allProduct,postProduct } from "../../../Redux/actions/actionsFunction/actions"
 import "./Logueo.css";
 function Logueo() {
 
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(allProduct())
-  },[])
   return (
     <div>
       <h1 className="h1">pantalla donde proximamente se encontrara la validacion de usuario autorizado.</h1>

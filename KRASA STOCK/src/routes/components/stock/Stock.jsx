@@ -1,14 +1,15 @@
-
 import React, { useState } from "react";
-import { newStock } from "../../../Redux/actions/actionsFunction/actions";
+import { newStock,allProduct } from "../../../Redux/actions/actionsFunction/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./stock.css";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 
-export default function Stock() {
+export default function Stock() { 
+  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.allProducts);
+ 
+ console.log(products);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
   const [errors, setErrors] = useState({});
@@ -23,7 +24,9 @@ export default function Stock() {
     event.preventDefault();
     try {
       await schema.validate({ name, amount }, { abortEarly: false });
-      const productExists = products.some((product) => product.name === name);
+      const productsName = name.toLowerCase()
+
+      const productExists = products.some((product) => product.name.toLowerCase() === productsName );
       if (!productExists) {
         return Swal.fire({
           position: "center",
@@ -34,9 +37,10 @@ export default function Stock() {
         });
       }
       const newAmount = { name: name, amount: parseInt(amount) };
-  
-  
+
       await dispatch(newStock(newAmount));
+      dispatch(allProduct())
+
       Swal.fire({
         position: "center",
         icon: "success",

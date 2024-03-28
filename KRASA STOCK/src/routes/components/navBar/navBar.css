@@ -33,9 +33,9 @@
 }
 .active {
   border-radius: 10px;
-  background-color: rgb(96, 166, 236);
+  background-color: #f3edef;
 }
 
 .li a:hover:not(.active) {
-  background-color: #f3edef;
+  background-color: #f3cdda;
 }

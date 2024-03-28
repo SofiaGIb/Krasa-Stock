@@ -53,7 +53,7 @@ export const AddProduct = () => {
 
   return (
     <div className="caja">
-      <h3 className="titulo">INGRESAR PRODUCTO</h3>
+      <h3 className="titulo">REGISTRAR PRODUCTOS</h3>
       <form className="formp" onSubmit={handleSubmit}>
         <input
           type="text"

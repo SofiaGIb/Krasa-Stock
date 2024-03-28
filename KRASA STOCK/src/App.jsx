@@ -8,7 +8,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { AddProduct } from "./routes/components/agregarProducto/AddProduct";
 import AddVentas from "./routes/components/agregarVentas/addVentas";
 import Product from "./routes/components/productos/Productos"
-
+import axios from "axios";
+axios.defaults.baseURL="http://localhost:3001/"
 function App() {
 
 

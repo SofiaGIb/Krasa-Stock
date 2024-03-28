@@ -19,7 +19,8 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
 
-        products:action.payload
+        products:action.payload,
+        allProducts:action.payload
       };
     case ADD_PRODUCT:
       return {
@@ -42,6 +43,7 @@ case ADD_SALE:
     case DELETE_PRODUCT:
       return {
         ...state,
+        products: state.products.filter(product => product.name !== action.payload.name)
       };
       
       case FOUND_PRODUCTS:

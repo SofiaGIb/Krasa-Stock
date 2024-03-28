@@ -13,7 +13,6 @@ function Ventas() {
 
   return (
     <div className="cajav">
-      <h1 className="titulop">lista de productos vendidos </h1>
       <ul className="cajapr">
       { sold
       .sort((a, b) => new Date(b.date) - new Date(a.date))
