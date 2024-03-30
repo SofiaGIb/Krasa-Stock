@@ -86,4 +86,3 @@ export const AddVentas = () => {
   );
 };
 
-export default AddVentas;
