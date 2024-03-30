@@ -6,7 +6,7 @@ import Stock from "./routes/components/stock/Stock";
 import Ventas from "./routes/components/ventas/Ventas";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AddProduct } from "./routes/components/agregarProducto/AddProduct";
-import {AddVentas} from "./routes/components/agregarVentas/AddVentas"
+import AddVentas from "./routes/components/agregarVentas/AddVentas";
 import Product from "./routes/components/productos/Productos"
 import axios from "axios";
 axios.defaults.baseURL="http://localhost:3001/"
