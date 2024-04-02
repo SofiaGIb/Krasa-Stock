@@ -2,8 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/**/*.js",
+      "src": "KRASA STOCK/server/**/*.js",
       "use": "@now/node-server"
     }
-  ]
+  ],
+  "root": "KRASA STOCK/server"
 }
