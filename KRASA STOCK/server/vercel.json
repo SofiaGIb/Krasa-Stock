@@ -5,6 +5,5 @@
       "src": "KRASA STOCK/server/**/*.js",
       "use": "@now/node-server"
     }
-  ],
-  "root": "KRASA STOCK/server"
+  ]
 }
