@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Krasa Stock/caracoles STOCK/server/**/*.js",
+      "use": "@now/node-server"
+    }
+  ]
+}
