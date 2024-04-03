@@ -4,11 +4,14 @@ const { productAll, deletProduct, found,stockChange } = require("../controllers/
 const allProduct = async (req, res) => {
   try {
     const products = await productAll(req, res);
+    
     res.status(200);
-  } catch (error) {
+  }
+  catch (error) {
     res.status(500).json({ error });
   }
 };
+
 //!----------------------------------------------------------------------------------------------------
 const productFound = async (req, res) => {
   try {
