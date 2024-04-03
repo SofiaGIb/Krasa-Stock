@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "Krasa Stock/KRASA STOCK/server/**/*.js",
-      "use": "@now/node-server"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
