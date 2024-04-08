@@ -1,16 +1,17 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.js", 
-      "use": "@vercel/node",
-      "config": {
-        "prerun": {
-          "build": {
-            "cmd": "prisma generate"
+    "version": 2,
+    "builds": [
+      {
+        "src": "server/index.js",
+        "use": "@vercel/node",
+        "config": {
+          "prerun": {
+            "build": {
+              "cmd": "npm run build"
+            }
           }
         }
       }
-    }
-  ]
-}
+    ]
+  }
+  
