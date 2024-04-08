@@ -7,7 +7,7 @@
       "config": {
         "prerun": {
           "build": {
-            "cmd": "npx prisma generate"
+            "cmd": "prisma generate"
           }
         }
       }
