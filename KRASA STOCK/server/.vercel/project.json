@@ -1,1 +1,18 @@
-{"orgId":"team_N7BdRC9ssMj4jRvpjHJbSihD","projectId":"prj_nxUkvB1MhjF07sDqsQcWxwtUu2pk"}
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server/index.js",
+        "use": "@vercel/node",
+        "config": {
+          "prerun": {
+            "build": {
+              "cmd": "npm run build"
+            }
+          }
+        }
+      }
+    ]
+  }
+  
+
