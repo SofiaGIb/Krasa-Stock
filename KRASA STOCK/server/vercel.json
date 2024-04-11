@@ -1,16 +1,1 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "server/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "prerun": {
-          "build": {
-            "cmd": "npm run build"
-          }
-        }
-      }
-    }
-  ]
-}
+{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
