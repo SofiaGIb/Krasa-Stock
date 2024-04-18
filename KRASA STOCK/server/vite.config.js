@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
-    target: 'node21.6.1',
+    target: 'node',
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
