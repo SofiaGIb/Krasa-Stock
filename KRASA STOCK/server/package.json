@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "npx prisma migrate dev && vite build ",
+    "postinstall": "prisma generate",
+    "build": "vite build ",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "node index.js",
