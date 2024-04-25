@@ -21,10 +21,10 @@
   bottom: 0; /* Alinea la lista de productos al final del contenedor */
   overflow-y: auto; /* Permite el desplazamiento vertical solo cuando sea necesario */
   padding: 5px; /* Espaciado interior */
-  border: 5px solid #727a46;
+  border: 5px solid #121211;
   border-radius: 25px;
-  background-color: #f0a9b4;}
-  .red {
+  background-color: #e0fbfc;}
+    .red {
   animation: pulse 5s infinite alternate;
 }
 
@@ -36,7 +36,7 @@
   }
   50% {
     transform: scale(1.02);
-    background-color: rgb(241, 101, 101);
+    background-color: rgb(250, 129, 129);
   }
 }
 .search{
@@ -74,8 +74,9 @@
   align-items: center;
 }
 .name {
+  font-weight: bold;
+  font-size: 28px;
   text-align: center;
-  font-size: 20px;
 
   text-decoration: solid;
 }
@@ -88,7 +89,7 @@
 .listp {
   border-style: double;
   list-style-type: none;
-  background-color: rgb(242, 220, 239);
+  background-color: rgb(178, 187, 242);
   align-content: center;
   padding: 10px;
   border-radius: 10px;

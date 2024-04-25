@@ -1,41 +1,55 @@
 .contenedor {
   overflow: hidden;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  box-shadow: 0 3px 4px rgba(251, 238, 238, 0.5);
+  padding-top: 30px;
+  padding-bottom: 10px;
   position: fixed;
-  top: 15px;
+  top: 1px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%; 
   max-width: auto; 
-  background-color: #ffb6c1;
+  background-color: #363063;
   
 }
 .ul {
   list-style-type: none;
+  padding: 5px;
 }
 
+.li {
+  display: inline-block;
+  margin-right: 10px;
+
+  position: relative;
+}
 
 .li a {
-    margin-right: 20px;
-    float: left;
-    border-radius: 30px;
-    padding: 20px;
-  border-radius: 80px;
-  border-color: #b0a6a6; 
-  border-width: 5px;
-
+  margin-right: 20px;
+  padding: 25px;
   display: block;
-  color: rgb(66, 61, 66);
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
+  line-height: 2;
 }
-.active {
-  border-radius: 10px;
-  background-color: #f3edef;
+.li a.active {
+  border-radius: 60px;
+  background-color: #d87435;
 }
 
 .li a:hover:not(.active) {
-  background-color: #f3cdda;
+  border-radius: 10px;
+  text-decoration: none; 
 }
+
+.li a:hover:not(.active)::after {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background-color: #ee6c4d; 
+  border-radius: 50px;}
+  

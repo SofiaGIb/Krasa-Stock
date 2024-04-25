@@ -7,23 +7,26 @@
 
 
 .silkscreen-regular {
-  font-family: "Silkscreen", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .silkscreen-bold {
-  font-family: "Silkscreen", sans-serif;
+  font-family:'Times New Roman', Times, serif;
+
+
+  
   font-weight: 700;
   font-style: normal;
 }
 body, html {
-  font-family: "Silkscreen", sans-serif;
-  font-weight: 900;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 700;
   font-style: bold;
 
 
-background-color: #eed7ab ;
+background-color:#3d5a80 ;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -38,7 +41,7 @@ background-color: #eed7ab ;
 
 .header {
   flex: 0 0 auto; /* No se expande, altura determinada por su contenido */
-  background-color: #f0a9b4;
+  background-color: #a29ca1;
   padding: 10px;
 }
 
@@ -50,7 +53,7 @@ background-color: #eed7ab ;
 
 .footer {
   flex: 0 0 auto; /* No se expande, altura determinada por su contenido */
-  background-color: #f0a9b4;
+  background-color: #7e7173;
   padding: 10px;
 }
 
@@ -58,4 +61,6 @@ background-color: #eed7ab ;
 
 
 
-
+* {
+  font-weight: bold;
+}

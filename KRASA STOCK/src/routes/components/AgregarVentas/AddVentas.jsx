@@ -15,10 +15,11 @@ export const AddVentas = () => {
   const [errors, setErrors] = useState({});
 
   const schema = Yup.object().shape({
-    productName: Yup.string().required("El nombre es requerido"),
+    productName: Yup.string().required(" NOMBRE ES REQUERIDO"),
     total: Yup.number()
-      .required("La cantidad es requerida")
-      .positive("La cantidad debe ser positiva"),
+      .required("CANTIDAD ES REQUERIDA")
+      .typeError("EL VALOR DEBE SER UN NUMERO")
+      .positive("CANTIDAD DEBE SER POSITIVA")
   });
 
   const handleSubmit = async (event) => {
@@ -37,7 +38,6 @@ export const AddVentas = () => {
         });
       }
       const newSale = { productName, total:parseInt(total) };
-      console.log(newSale);
       await dispatch(addSale(newSale));
       dispatch(allProduct());
 
@@ -60,11 +60,11 @@ export const AddVentas = () => {
 
   return (
     <div className="cajaf">
-      <h1 className="titv">INGRESAR VENTAS REALIZADAS </h1>
+      <h2 className="titv">INGRESAR VENTAS REALIZADAS </h2>
       <form onSubmit={handleSubmit} className="formv">
         <input
           type="text"
-          placeholder="nombre del producto"
+          placeholder="NOMBRE DEL PRODUCTO"
           value={productName}
           onChange={(event) => setProductName(event.target.value)}
         />
@@ -72,7 +72,7 @@ export const AddVentas = () => {
 
         <input
           type="number"
-          placeholder="total"
+          placeholder="CANTIDAD"
           value={total}
           onChange={(event) => setTotal(event.target.value)}
         />

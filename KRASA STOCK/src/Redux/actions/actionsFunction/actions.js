@@ -23,6 +23,7 @@ export const allProduct = () => {
   };
 };
 export const postProduct = (payload) => {
+  console.log(payload);
   return async function (dispatch) {
     try {
       const response = await axios.post("/products", payload);

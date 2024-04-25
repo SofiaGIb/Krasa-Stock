@@ -17,7 +17,7 @@ function NavBar() {
           <NavLink to="/productos" activeClassName="active">PRODUCTOS</NavLink>
         </li>
         <li className="li">
-          <NavLink exact to="/stock" activeClassName="active">agregar Stock</NavLink>
+          <NavLink exact to="/stock" activeClassName="active">AGREGAR STOCK</NavLink>
         </li>
         <li className="li"> <NavLink to="/addVentas" activeClassName="active">REGISTRAR VENTAS</NavLink> </li>
         <li className="li">

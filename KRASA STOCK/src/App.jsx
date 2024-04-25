@@ -13,8 +13,6 @@ import { AddVentas } from "./routes/components/AgregarVentas/AddVentas";
 import axios from "axios";
 axios.defaults.baseURL="https://test3-xi-two.vercel.app/"
 function App() {
-
-
   return (
     <>
       <div>
@@ -34,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+;

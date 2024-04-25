@@ -12,9 +12,9 @@ margin-top: 18vh;
 .formp{
     padding:  20px ;
     display: flex;
-    border: 5px solid #727a46;
-    background-color:#eddde0;
-    flex-direction: column;
+    border: 5px solid #111111;
+    background-color: #e0fbfc;
+        flex-direction: column;
 }
 .formp>input{
     border-radius: 15px;
@@ -35,7 +35,10 @@ margin-top: 18vh;
 .titulo{
     
   text-align: center;
-    margin-bottom: 55px;
+  margin-top: 20px;
+   margin-bottom: 45px;
+   text-decoration: dotted;
+   color: rgb(245, 245, 245); 
 }
 .new{
     background-color: rgb(238, 214, 228);
@@ -81,8 +84,8 @@ margin-top: 18vh;
 
 }
 .bottonc:hover{
-    background-color: rgb(173, 177, 231);
+    background-color: rgb(186, 189, 238);
 }
 .bottonc:active{
-    background-color: rgb(244, 164, 232);
+  background-color: rgb(174, 212, 127);
 }

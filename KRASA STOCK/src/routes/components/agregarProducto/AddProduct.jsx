@@ -16,10 +16,11 @@ export const AddProduct = () => {
   const product = useSelector((state) => state.products);
 
   const schema = Yup.object().shape({
-    name: Yup.string().required("El nombre es requerido"),
+    name: Yup.string().required(" NOMBRE REQUERIDO"),
     amount: Yup.number()
- .required("La cantidad es requerida")
-      .positive("La cantidad debe ser positiva"),
+ .required("CANTIDAD REQUERIDA")
+      .positive("CANTIDAD DEBE SER POSITIVA")
+      .typeError("EL VALOR DEBE SER UN NUMERO"),
   });
 
   const handleSubmit = async (event) => {
@@ -27,7 +28,7 @@ export const AddProduct = () => {
 
     try {
       await schema.validate({ name, amount }, { abortEarly: false });
-      const newProduct = { name, amount };
+      const newProduct = { name,description, amount };
       await dispatch(postProduct(newProduct));
       setIsProductCreated(true);
       setCreatedProduct(newProduct);
@@ -49,15 +50,15 @@ export const AddProduct = () => {
   setTimeout(() => {
     setIsProductCreated(false);
     document.querySelector(".new").classList.add("hidden");
-  }, 9000); // 5sg
+  }, 9000); 
 
   return (
     <div className="caja">
-      <h3 className="titulo">REGISTRAR PRODUCTOS</h3>
+      <h2 className="titulo">REGISTRAR PRODUCTOS</h2>
       <form className="formp" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="name"
+          placeholder="NOMBRE DEL PRODUCTO"
           value={name.includes(" ") ? name : name.trim()}
           onChange={(event) => setName(event.target.value)}
         />
@@ -65,16 +66,17 @@ export const AddProduct = () => {
 
         <input
           type="text"
-          placeholder="description"
+          placeholder="DESCRIPCIoN DEL PRODUCTO"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
-        />
+          />
+          
         <input
           type="number"
-          placeholder="amount"
+          placeholder="CANTIDAD"
           value={amount}
           onChange={(event) => setAmount(event.target.value)}
-        />
+          />
         {errors.amount && <div>{errors.amount}</div>}
 
         <button type="submit" className="bottonc">
@@ -88,7 +90,7 @@ export const AddProduct = () => {
           <ul>
             <li>
               <h3>
-                {createdProduct.name},{createdProduct.description}
+                {createdProduct.name},{createdProduct.description}  
                 {createdProduct.amount}
               </h3>
             </li>

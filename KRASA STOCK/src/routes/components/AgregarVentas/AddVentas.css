@@ -11,16 +11,18 @@
 .formv {
   padding: 20px 20px 20px 20px;
   display: flex;
-  border: 5px solid #727a46;
-  background-color: #eddde0;
-  flex-direction: column;
+  border: 5px solid #080808;
+  background-color: #e0fbfc;
+    flex-direction: column;
 }
 
-.formv > input {
+.formv>input {
   border-radius: 15px;
   margin-top: 20px;
   padding: 20px;
   font-size: larger;
+
+  
 }
 
 .buttonv {
@@ -37,11 +39,12 @@
     background-color: rgb(173, 177, 231);
 }
 .buttonv:active {
-    background-color: rgb(244, 164, 232);
+  background-color: rgb(174, 212, 127);
 }
 .titv{   
   text-align: center;
   margin-top: 20px;
-   margin-bottom: 45px;
+   margin-bottom: 55px;
    text-decoration: dotted;
-   color: rgb(60, 60, 73);}
+   color: rgb(245, 245, 245); }
+   

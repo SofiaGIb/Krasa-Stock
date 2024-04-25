@@ -8,7 +8,7 @@ const SearchBar = ({ setSearchTerm }) => {
   };
   return (
     <div className='cajad'>
-      <input type="text" placeholder='Buscar producto... ' onChange={handleName} />
+      <input type="text" placeholder='BUSCAR PRODUCTO... ' onChange={handleName}/>
     </div>
   );
 };

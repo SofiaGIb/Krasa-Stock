@@ -9,16 +9,16 @@ export default function Stock() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
  
- console.log(products);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
   const [errors, setErrors] = useState({});
 
   const schema = Yup.object().shape({
-    name: Yup.string().required("El nombre es requerido"),
+    name: Yup.string().required("NOMBRE ES REQUERIDO"),
     amount: Yup.number()
-      .required("La cantidad es requerida")
-      .positive("La cantidad debe ser positiva"),
+    .typeError("EL VALOR DEBE SER UN NUMERO")
+      .required("CANTIDAD ES REQUERIDA")
+      .positive("CANTIDAD DEBE SER POSITIVA"),
   });
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -65,7 +65,7 @@ export default function Stock() {
       <form className="forms" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="nombre producto"
+          placeholder="NOMBRE DEL PRODUCTO"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
@@ -73,7 +73,7 @@ export default function Stock() {
 
         <input
           type="number"
-          placeholder="nuevo stock"
+          placeholder="CANTIDAD"
           value={amount}
           onChange={(event) => {
             setAmount(event.target.value);
