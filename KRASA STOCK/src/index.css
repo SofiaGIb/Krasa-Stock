@@ -1,32 +1,26 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-
 }
 
-
-
 .silkscreen-regular {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .silkscreen-bold {
-  font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-
-  
   font-weight: 700;
   font-style: normal;
 }
-body, html {
-  font-family:'Times New Roman', Times, serif;
+body,
+html {
+  font-family: "Times New Roman", Times, serif;
   font-weight: 700;
   font-style: bold;
 
-
-background-color:#3d5a80 ;
+  background-color: #3d5a80;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -56,10 +50,6 @@ background-color:#3d5a80 ;
   background-color: #7e7173;
   padding: 10px;
 }
-
-
-
-
 
 * {
   font-weight: bold;
