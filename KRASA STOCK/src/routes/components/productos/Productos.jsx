@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { allProduct, deletProduct } from "../../../Redux/actions/actionsFunction/actions";
 import SearchBar from "../searchBar/Searchbar";
@@ -8,11 +8,9 @@ import "./productos.css";
 function Product() {
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(allProduct())
-  },[])
-
-
+  useEffect(() => {
+    dispatch(allProduct());
+  }, []);
 
   const products = useSelector((state) => state.products);
   const [searchTerm, setSearchTerm] = useState("");

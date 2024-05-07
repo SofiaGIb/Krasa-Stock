@@ -14,3 +14,7 @@ const SearchBar = ({ setSearchTerm }) => {
 };
 
 export default SearchBar;
+
+
+
+

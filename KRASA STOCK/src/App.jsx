@@ -8,17 +8,19 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { AddProduct } from "./routes/components/agregarProducto/AddProduct";
 import Product from "./routes/components/productos/Productos"
 import { AddVentas } from "./routes/components/AgregarVentas/AddVentas";
-
+import ReporteStock from "./routes/components/reportes/reporteStock/ReporteStock";
 
 import axios from "axios";
-axios.defaults.baseURL="https://test3-xi-two.vercel.app/"
-
+//axios.defaults.baseURL="https://test3-xi-two.vercel.app/"
+axios.defaults.baseURL="http://localhost:3001/"
 function App() {
   return (
     <>
       <div>
         <NavBar></NavBar>
         <Routes>
+          
+          <Route path="/reporte"  element={<ReporteStock></ReporteStock>}></Route>
           <Route path="/"  element={<Logueo></Logueo>}></Route>
           <Route path="/Productos" element={<Product></Product>}></Route>
           <Route path="/addProducto" element={<AddProduct></AddProduct>}></Route>

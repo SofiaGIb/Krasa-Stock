@@ -23,6 +23,9 @@ function NavBar() {
         <li className="li">
           <NavLink to="/ventas" activeClassName="active">VENTAS</NavLink>
         </li>
+        <li className="li">
+          <NavLink exact to= "/reporte"> REPORTES </NavLink>
+        </li>
       </ul>
     </nav>
   );
