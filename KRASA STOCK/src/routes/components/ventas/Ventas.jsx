@@ -11,14 +11,14 @@ function Ventas() {
   useEffect(() => {
     dispatch(saleProduct());
   }, [dispatch]);
-
+ const filterSale = dates ? sold.filter(sale=> sale.date  === dates) : sold
   return (
     <div className="cajav">
       <ul className="cajapr">
         <div>
-          <FilterDate setDates={setDates} sold={sold} />
+        <FilterDate setDates={setDates} sold={sold} />
         </div>
-        {sold
+        { filterSale
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((sale) => (
             <li className="listv" key={sale.id}>

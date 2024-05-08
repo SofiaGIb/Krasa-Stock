@@ -3,9 +3,9 @@ import React from "react";
 
 
 export default function FilterDate({ setDates,sold}) {
-
+ 
   const handleDate = (event) => {
-    const {value}=event.target;
+    const value=event.target.value;
     setDates(value);
   };
   return (
@@ -15,14 +15,18 @@ export default function FilterDate({ setDates,sold}) {
         onChange={handleDate}>
         <option >BUSCAR POR FECHA</option>
         {sold.map((venta) => (
-          <option key={venta.id} >
-            {venta.date && (    <h4 className="fecha">
+          <option   key={venta.id} value={venta.date} >
+        {venta.date &&
+        
+        (    <h4 className="fecha">
                   {" "}
                   {new Intl.DateTimeFormat("es-ES", { dateStyle: "full" }).format(
                     new Date(venta.date)
-                  )}
+                  )
+                }
                 </h4>
-              ) }
+              ) 
+            }
           </option>
         ))}
       </select>
