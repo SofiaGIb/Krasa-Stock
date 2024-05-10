@@ -1,0 +1,3 @@
+se podra poner todos los productos con un stock menos a 10 en un pdf ? 
+
+y ser ese el que se envie por email o es mejor sacarlo directamente desde el backend o sea armarlo al que se enviara por email directamente de la info de la base de datos  
