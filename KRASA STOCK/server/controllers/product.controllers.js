@@ -1,8 +1,12 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
+
 const productAll = async (req, res) => {
   try {
+    const user = await prisma.user.findMany({
+    });
+     console.log(user);
     const productsAll = await prisma.product.findMany({
       orderBy: {
         amount: "asc",
@@ -55,6 +59,8 @@ const stockChange = async (name, amount) => {
   }
 };
 
+
+
 //!-----------------------------------------------------------------------------------------------------
 const createProduct = async (name, description, amount) => {
   try {
@@ -92,5 +98,5 @@ module.exports = {
   productAll,
   deletProduct,
   found,
-  stockChange
+  stockChange,
 };

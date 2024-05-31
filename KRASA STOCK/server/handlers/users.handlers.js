@@ -14,7 +14,7 @@ const users = async (req, res) => {
 const userNew = async (req, res) => {
   try {
     const { password, email, name } = req.body;
-    if (!password || !email || !name)
+    if (!password || !email || name)
       return res.status(400).json({ message: "LOS CAMPOS DEBEN SER COMPLETADOS" });
 
     res.status(200).json({ message: "Usuario creado" });
