@@ -1,6 +1,8 @@
 const { createProduct } = require("../controllers/product.controllers.js");
 const { productAll, deletProduct, found,stockChange } = require("../controllers/product.controllers.js");
 
+
+
 const allProduct = async (req, res) => {
   try {
     const products = await productAll(req, res);
@@ -25,6 +27,7 @@ const productFound = async (req, res) => {
   }
 };
 //!-----------------------------------------------------------------------------------------------------
+
 const newProduct = async (req,res) => {
  try {
   
@@ -76,5 +79,5 @@ module.exports = {
   allProduct,
   productoDelete,
   productFound,
-  newAmount
+  newAmount, 
 };

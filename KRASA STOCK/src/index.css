@@ -15,19 +15,9 @@
   font-style: normal;
 }
 body,
-html {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 700;
-  font-style: bold;
-
-  background-color: #3d5a80;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; /* Evita que se muestren barras de desplazamiento */
-}
 
 .container {
+  background-color: #3d5a80;
   display: flex;
   flex-direction: column;
   height: 100%;

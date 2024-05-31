@@ -10,5 +10,4 @@ productRouter.get("/:name",productFound);
 productRouter.get("/",allProduct);
 productRouter.post('/',newProduct);
 productRouter.patch('/',newAmount)
-
 module.exports = productRouter;

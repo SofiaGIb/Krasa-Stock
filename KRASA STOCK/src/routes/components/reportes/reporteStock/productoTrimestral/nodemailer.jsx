@@ -1,27 +1,16 @@
-import nodemailer from nodemailer
+const { default: jsPDF } = require("jspdf")
 
-const enviarcorreo = async ()=> {
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-    port: 456,
-    secure: true,
-    auth: {
-      user: 'sofiagibanez@gmail.com',
-      pass: 'biyidvvwukrmuylq'
-    }
-        
-    })
+import React from 'react'
 
+export default function nodemailer() {
 
+const tra = "elementos con  poco stock"
 
-
-let info = await transporter.sendMail({
-    from: '"sofia" sofiagibanez@gmail.com>',
-    to: 'danielarebecaspampinato@gmail.com',
-    subject: 'Reporte en PDF',
-    text: 'Adjunto encontrarás el reporte en PDF.',
-
-  });
-
-  console.log('Correo enviado: %s', info.messageId);
+doc.text(10,10,tra);
+doc.save('lista-productos')
+  return (
+    <div>
+      <button onClick={crearpdf}>crear pdf </button>
+    </div>
+  )
 }

@@ -1,16 +1,10 @@
 import React from "react";
-import Register from "./Register";
-import "./Logueo.css";
-
-function Logueo() {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-  };
-
+import Logueo from "./Logueo";
+export default function Register() {
   return (
     <div className="h1">
       <div className="formc">
-        <form className="forma" onSubmit={handleSubmit}>
+        <form className="forma">
           <label className="sr-only" htmlFor="">
             User:
           </label>
@@ -20,14 +14,15 @@ function Logueo() {
           </label>
           <input className="input " type="email" placeholder="Email" />
 
-          <button className="button">Iniciar sesion</button>
+          <label className="input"> password</label>
+          <input type="text" className="input" placeholder="password" />
+          <button className="button">Crear cuenta</button>
+          <p class="error escondido">Error al registrarse</p>
         </form>
         <p>
-          ¿Todavía no tenés una cuenta? - <a href="/Register">Registrate</a>
+          ¿Ya estás registrado? - <a href="/logueo">Crear cuenta</a>
         </p>
       </div>
     </div>
   );
 }
-
-export default Logueo;

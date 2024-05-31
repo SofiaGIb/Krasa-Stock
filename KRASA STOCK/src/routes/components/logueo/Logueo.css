@@ -1,25 +1,42 @@
 .h1{
-    color: brown;
+    margin: 0;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 18%;
-    padding: 70px;
-    background-color: rgb(224, 251, 251);
+    align-items: center;
+    min-height: 100svh;
+    font-size: larger;
 }
-.orient > ul{
-    font-size: 20px;
-    color: rgb(49, 19, 77);
+
+.formc{
+    background-color: aliceblue;
+width: 500px;
+border-radius: 10px;
+padding: 50px;
 }
-.orient  ul h4{
-    padding: 0;
-    color: rgb(220, 137, 29);
-    text-align: center;
+.forma{
+    display: flex;
+    gap: 10px;
+flex-direction: column}
+.sr-only{
+    position: absolute;
+    left :-10000px;
+    top: auto;
+
+
+}
+.error{
+    color: rgb(224, 72, 72);
+}
+.input,button {
+    font-size: large;
+    border-radius: 2px;
+    border: unset;
+    padding: 15px 30px;
+}
+button{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(42, 42, 166);
     font-weight: bold;
-    text-decoration: underline;
 }
-.orient {
-    padding-bottom: 0px;
-    height: auto; 
-    border-style: dotted;
-    padding: 5px;
-    overflow: auto;
-  }

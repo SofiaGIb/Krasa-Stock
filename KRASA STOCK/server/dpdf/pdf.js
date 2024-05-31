@@ -10,3 +10,5 @@ doc.save ("a4.pdf");
 
 
 
+//necesito traer de la lista de productos ,los productois que tengan un stock menor a 
+//10 y ponerlos en el pdf que luegop se enviara por email 

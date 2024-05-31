@@ -10,16 +10,12 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url= env("POSTGRES_URL")
+  url      = env("POSTGRES_URL")
 }
-
-
-
-
 
 model Product {
   id          Int     @id @default(autoincrement())
-  name        String  @unique
+  name        String  @unique 
   description String?
   amount      Int
   sales       Sale[]
@@ -29,6 +25,13 @@ model Sale {
   id          Int      @id @default(autoincrement())
   total       Int
   productName String
-  product     Product  @relation(fields: [productName], references: [name], onDelete: Cascade)
+  product     Product  @relation(fields:[productName], references: [name], onDelete: Cascade)
   date        DateTime @default(now())
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name String   @db.VarChar(255)
+  password String
+  email    String @unique
 }
