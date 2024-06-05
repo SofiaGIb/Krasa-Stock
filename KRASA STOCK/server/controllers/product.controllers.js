@@ -1,12 +1,8 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-
 const productAll = async (req, res) => {
   try {
-    const user = await prisma.user.findMany({
-    });
-     console.log(user);
     const productsAll = await prisma.product.findMany({
       orderBy: {
         amount: "asc",
@@ -17,7 +13,6 @@ const productAll = async (req, res) => {
     console.log(error);
     res.status(500).json({ error: "Error fetching products" });
   }
-
 };
 
 //!-----------------------------------------------------------------------------------------------------
@@ -32,7 +27,7 @@ const found = async (req, res) => {
         },
       },
     });
-    res.status(200).json({ "El producto encontrado es" : product});
+    res.status(200).json({ "El producto encontrado es": product });
   } catch (error) {
     console.error("Error buscando el producto:", error);
     res.status(500).json({ error: "Error buscando el producto" });
@@ -45,21 +40,17 @@ const stockChange = async (name, amount) => {
       where: {
         name: name,
       },
-      data:{
-        amount :{
-
-          increment :amount, 
-        }
-      }
+      data: {
+        amount: {
+          increment: amount,
+        },
+      },
     });
     return { success: true, newStock: newStock };
-
   } catch (error) {
     return { success: false, error: error.message };
   }
 };
-
-
 
 //!-----------------------------------------------------------------------------------------------------
 const createProduct = async (name, description, amount) => {
@@ -72,7 +63,6 @@ const createProduct = async (name, description, amount) => {
       },
     });
     return { success: true, newProduct: newProduct };
-
   } catch (error) {
     console.log({ error });
   }

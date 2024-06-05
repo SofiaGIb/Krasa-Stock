@@ -1,10 +1,21 @@
 import React from "react";
 import Register from "./Register";
+import { useState } from "react";
+import { postUser } from "../../../Redux/actions/actionsFunction/actions";
 import "./Logueo.css";
+import { useDispatch } from "react-redux";
 
 function Logueo() {
+  const dispatch = useDispatch();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const newUser = { name,password,email};
+      await dispatch(postUser(newUser));
+    } catch (error) {}
   };
 
   return (
@@ -12,14 +23,34 @@ function Logueo() {
       <div className="formc">
         <form className="forma" onSubmit={handleSubmit}>
           <label className="sr-only" htmlFor="">
-            User:
+            name:
           </label>
-          <input className="input" type="text" placeholder="Nombre de usuario" />
+          <input
+            className="input"
+            type="text"
+            value={name}
+            placeholder="Name"
+            onChange={(event) => setName(event.target.value)}
+          />
           <label htmlFor="" className="sr-only">
-            correo
+            Email
           </label>
-          <input className="input " type="email" placeholder="Email" />
-
+          <input
+            className="input "
+            type="email"
+            value={email}
+            placeholder="Email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <label htmlFor="" className="sr-only"> password
+            </label>
+            <input
+            className="input"
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
           <button className="button">Iniciar sesion</button>
         </form>
         <p>

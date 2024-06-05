@@ -1,4 +1,5 @@
 import {
+  USER,
   ADD_PRODUCT,
   SALE_PRODUCTS,
   ALL_PRODUCT,
@@ -22,8 +23,24 @@ export const allProduct = () => {
     }
   };
 };
+export const postUser =(payload)=>{
+return async function (dispatch) {
+  try {
+    const response =  await axios.post("/User", payload)
+    console.log(payload);
+   return dispatch({
+    type :USER,
+    payload : response.data,
+   })
+  
+  
+  } catch (error) {
+    console.log(error.response);
+  }
+}}
+
+
 export const postProduct = (payload) => {
-  console.log(payload);
   return async function (dispatch) {
     try {
       const response = await axios.post("/products", payload);
