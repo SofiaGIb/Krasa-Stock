@@ -11,7 +11,8 @@ import { AddVentas } from "./routes/components/AgregarVentas/AddVentas";
 import ReporteStock from "./routes/components/reportes/reporteStock/ReporteStock";
 
 import axios from "axios";
-axios.defaults.baseURL="https://test3-xi-two.vercel.app/"
+//axios.defaults.baseURL="https://test3-xi-two.vercel.app/"
+axios.defaults.baseURL="http://localhost:3001/"
 function App() {
   return (
     <>
@@ -31,7 +32,6 @@ function App() {
     </>
   );
 }
-//axios.defaults.baseURL="http://localhost:3001/"
 
 export default App;
 
