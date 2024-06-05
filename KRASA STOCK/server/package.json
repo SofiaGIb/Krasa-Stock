@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "postinstall": "prisma generate",
-    "build": "vite build ",
+    "build": "prisma generate &&  vite build ",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "node index.js",
