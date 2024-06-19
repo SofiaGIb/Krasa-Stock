@@ -13,10 +13,10 @@ const users = async (req, res) => {
 
 const userNew = async (req, res) => {
   try {
-    const { password, email, name } = req.body;
-    if (!password || !email || !name)
+    const {  password, name } = req.body;
+    if ( !password || !name)
       return res.status(400).json({ message: "LOS CAMPOS DEBEN SER COMPLETADOS" });
-    const nuevoUsuario = await newUser(name, password, email);
+    const nuevoUsuario = await newUser(name,password);
     if(nuevoUsuario.message === "Usuario ya registrado"){
       return res.status(400).json({message :"Usuario ya registrado"})
     };

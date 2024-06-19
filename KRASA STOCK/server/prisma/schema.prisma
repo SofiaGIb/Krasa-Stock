@@ -31,7 +31,6 @@ model Sale {
 
 model User {
   id       Int    @id @default(autoincrement())
-  name String   @db.VarChar(255)
+  name String   @db.VarChar(255) @unique
   password String
-  email    String @unique
 }
