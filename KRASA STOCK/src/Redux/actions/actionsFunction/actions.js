@@ -27,15 +27,14 @@ export const postUser =(payload)=>{
 return async function (dispatch) {
   try {
     const response =  await axios.post("/User", payload)
-    console.log(payload);
    return dispatch({
     type :USER,
     payload : response.data,
-   })
-  
-  
+   });
+ 
+
   } catch (error) {
-    console.log(error.response);
+    console.log(error.response.data);
   }
 }}
 
@@ -48,7 +47,7 @@ export const postProduct = (payload) => {
         type: ADD_PRODUCT,
         payload: response.data,
       });
-    } catch (error) {
+    } catch (error){
       console.log(error.response);
     }
   };
