@@ -18,6 +18,7 @@ function App() {
       <div>
         <NavBar></NavBar>
         <Routes>
+          < Route></Route>
           <Route path="/" element={<Logueo></Logueo>}></Route>
             <Route path="/reporte" element={<ReporteStock></ReporteStock>}></Route>
             <Route path="/Productos" element={<Product></Product>}></Route>

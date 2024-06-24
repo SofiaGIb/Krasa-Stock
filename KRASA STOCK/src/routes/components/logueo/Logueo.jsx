@@ -4,7 +4,7 @@ import { postUser } from "../../../Redux/actions/actionsFunction/actions";
 import "./Logueo.css";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-
+import jwt from "jsonwebtoken"
 function Logueo() {
   const dispatch = useDispatch();
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ function Logueo() {
       const newUser = { name, password };
       const ok = await dispatch(postUser(newUser));
       if (ok) {
-        window.location.href = "/Productos";
+        window.location.href = "*/";
       }
       setErrors({});
     } catch (error) {
