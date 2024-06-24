@@ -1,5 +1,6 @@
 require ('dotenv').config();
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
@@ -26,6 +27,16 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE,PATCH');
   next();
 });
+// server.use((req,res,next)=>{
+//   const token = req.cookie.access_token
+//   let data = null;
+//   req.session = {user:null}
+//   try{data = jwt.verify(token,PALABRACRETA);
+//     req.session.user = data
+
+//   }
+//   catch(error){res.render(ïndex)}
+// })
 
 server.use( "/", router);
 

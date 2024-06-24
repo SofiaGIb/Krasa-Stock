@@ -1,5 +1,13 @@
-const { usersAll, newUser } = require("../controllers/User.controller");
+const { usersAll, newUser,protejida } = require("../controllers/User.controller");
 
+
+const {schema} = require ('../validation')
+const {z} = require('zod')
+
+const protected = async (req,res) => {
+
+}
+//!..........................................
 const users = async (req, res) => {
   try {
     const users = await usersAll(req, res);
@@ -12,10 +20,17 @@ const users = async (req, res) => {
 //!................................................
 
 const userNew = async (req, res) => {
+
   try {
     const {  password, name } = req.body;
-    if ( !password || !name)
-      return res.status(400).json({ message: "LOS CAMPOS DEBEN SER COMPLETADOS" });
+    try {
+      schema.parse({ name, password });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ errors: error.errors });
+      }
+      return res.status(500).json({ message: "Error de validación", error });
+    }
     const nuevoUsuario = await newUser(name,password);
     if(nuevoUsuario.message === "Usuario ya registrado"){
       return res.status(400).json({message :"Usuario ya registrado"})
@@ -31,6 +46,7 @@ const userNew = async (req, res) => {
 };
 
 module.exports = {
+  protected,
   userNew,
   users,
 };
